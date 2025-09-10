@@ -1,167 +1,124 @@
 import React, { useState } from "react";
 import Logo from "../../assets/Logo.png";
 
-const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+const NAV_LINKS = [
+  { id: 1, title: "Inicio", href: "#inicio" },
+  { id: 2, title: "Servicios", href: "#servicios" },
+  { id: 3, title: "Nuestra huella", href: "#huella" },
+  { id: 4, title: "Contacto", href: "#contacto" },
+];
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+const NAV_REDES = [
+  { id: 1, title: "WhatsApp", href: "https://wa.me/XXXXXXXXX", icon: "bi bi-whatsapp" },
+  { id: 2, title: "Facebook", href: "https://facebook.com", icon: "bi bi-facebook" },
+  { id: 3, title: "Instagram", href: "https://instagram.com", icon: "bi bi-instagram" },
+];
 
-    const navbarRedes = [
-        {
-            id: 1,
-            title: "Instagram",
-            link: "https://www.instagram.com",
-            icon: "bi bi-instagram",
-        },
-        {
-            id: 2,
-            title: "Tiktok",
-            link: "https://www.tiktok.com",
-            icon: "bi bi-tiktok",
-        },
-    ];
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
 
-    const navbarLinks = [
-        {
-            id: 1,
-            title: "Inicio",
-            link: "/",
-        },
-        {
-            id: 2,
-            title: "Nosotros",
-            link: "#",
-        },
-        {
-            id: 3,
-            title: "Contacto",
-            link: "#",
-        },
-        {
-            id: 4,
-            title: "Soporte",
-            link: "#",
-        },
-    ];
+  const chipBase =
+    "rounded-full font-extrabold tracking-tight transition-colors inline-flex items-center justify-center";
+  const chipSizes =
+    "px-5 py-2 text-base sm:px-6 sm:py-2.5 sm:text-lg lg:px-7 lg:py-3 lg:text-xl";
+  const chipGreen = "bg-[#B4F227] text-[#2a1154] hover:brightness-105";
 
-    return (
-        <nav className="fixed top-0 left-0 w-full bg-purple-900 bg-opacity-30 backdrop-blur-md z-50 transition-all duration-300">
-            <div className="flex justify-between items-center sm:px-12 sm:py-6 px-4 py-3">
-                {/* Logo */}
-                <div className="flex items-center gap-2">
-                    <img src={Logo} alt="Logo" className="w-[100px]" />
-                </div>
+  return (
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur shadow">
+      <div className="mx-auto max-w-7xl px-4 lg:px-8 py-4 flex items-center justify-between">
+        {/* LOGO */}
+        <a href="#inicio" className="flex items-center gap-3">
+          <img src={Logo} alt="MAPAPETS" className="h-12 md:h-16 xl:h-20" />
+        </a>
 
-                {/* Botón de menú hamburguesa - visible solo en móvil */}
-                <button
-                    className="md:hidden text-white p-2"
-                    onClick={toggleMenu}
+        {/* LINKS desktop */}
+        <ul className="hidden md:flex items-center gap-3 lg:gap-4">
+          {NAV_LINKS.map((l) => (
+            <li key={l.id}>
+              <a href={l.href} className={`${chipBase} ${chipSizes} ${chipGreen}`}>
+                {l.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* REDES desktop */}
+        <ul className="hidden md:flex items-center gap-3">
+          {NAV_REDES.map((r) => (
+            <li key={r.id}>
+              <a
+                href={r.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={r.title}
+                className="inline-flex items-center justify-center rounded-2xl
+                           bg-[#5B21B6] text-white hover:opacity-90 transition
+                           h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14"
+              >
+                <i className={`${r.icon} text-xl sm:text-2xl lg:text-3xl`} />
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* HAMBURGUESA móvil */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden p-2 rounded-xl text-[#5B21B6] hover:bg-white/40"
+          aria-label="Abrir menú"
+        >
+          <svg width="28" height="28" fill="none" stroke="currentColor">
+            {open ? (
+              <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 7h20M4 13h20M4 19h20" />
+            )}
+          </svg>
+        </button>
+      </div>
+
+      {/* MENÚ móvil */}
+      <div
+        className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${
+          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        } bg-white/90 backdrop-blur`}
+      >
+        <div className="px-4 pb-5 space-y-3">
+          <ul className="grid grid-cols-2 gap-3">
+            {NAV_LINKS.map((l) => (
+              <li key={l.id}>
+                <a
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className={`${chipBase} ${chipSizes} ${chipGreen} w-full`}
                 >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        {isOpen ? (
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        ) : (
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 6h16M4 12h16M4 18h16"
-                            />
-                        )}
-                    </svg>
-                </button>
+                  {l.title}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-                {/* Navegación - visible en desktop */}
-                <div className="hidden md:block">
-                    <ul className="flex sm:space-x-8 space-x-4 px-4">
-                        {navbarLinks.map((link) => (
-                            <li key={link.id}>
-                                <a
-                                    href={link.link}
-                                    className="sm:text-lg text-sm text-white hover:text-sky-100 transition-transform duration-300 transform hover:scale-110 inline-block"
-                                >
-                                    {link.title}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+          <ul className="flex items-center justify-center gap-3 pt-2">
+            {NAV_REDES.map((r) => (
+              <li key={r.id}>
+                <a
+                  href={r.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  aria-label={r.title}
+                  className="inline-flex items-center justify-center rounded-2xl
+                             bg-[#5B21B6] text-white hover:opacity-90 transition
+                             h-12 w-12"
+                >
+                  <i className={`${r.icon} text-2xl`} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}
 
-                {/* Redes - visible en desktop */}
-                <div className="hidden md:block">
-                    <ul className="flex space-x-4">
-                        {navbarRedes.map((link) => (
-                            <li key={link.id}>
-                                <a
-                                    href={link.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-block transition-transform duration-300 transform hover:scale-125"
-                                >
-                                    <i
-                                        className={`${link.icon} sm:text-2xl text-lg text-white transition-all duration-300 hover:text-sky-100`}
-                                    ></i>
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-
-            {/* Menú móvil */}
-            <div
-                className={`md:hidden absolute w-full bg-purple-950 transition-all duration-300 ${
-                    isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-            >
-                {/* Links de navegación móvil */}
-                <ul className="flex flex-col px-4 py-2">
-                    {navbarLinks.map((link) => (
-                        <li key={link.id} className="py-2 text-center">
-                            <a
-                                href={link.link}
-                                className="text-white hover:text-sky-100 block"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                {link.title}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-
-                {/* Redes sociales móvil */}
-                <ul className="flex space-x-4 px-4 py-2 border-t border-purple-700 justify-center">
-                    {navbarRedes.map((link) => (
-                        <li key={link.id}>
-                            <a
-                                href={link.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-block"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                <i
-                                    className={`${link.icon} text-lg text-white hover:text-sky-100`}
-                                ></i>
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </nav>
-    );
-};
-
-export default Navbar;

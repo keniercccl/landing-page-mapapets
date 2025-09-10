@@ -7,8 +7,9 @@
 @tailwind utilities;
 
 body {
-    font-family: "Poppins", sans-serif;
-    background-color: rgb(88, 0, 170);
+   background-color: #ffffff; /* blanco puro */
+  margin: 0;
+  font-family: 'Poppins', sans-serif; /* o la que uses */
 }
 
 

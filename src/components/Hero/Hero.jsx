@@ -1,67 +1,104 @@
 import React from "react";
-import Personaje from "../../assets/Personaje.png";
-import Logo from "../../assets/Logo.png";
 import { motion } from "framer-motion";
+import Logo from "../../assets/Logo.png";      // si ya no lo usas, puedes quitarlo
 import { slideUp, slideInFromSide } from "../../utility/animation";
 
 const Hero = () => {
-    return (
-        <section className="flex justify-center mt-36 md:mt-20">
-            <div className="grid grid-cols-1 md:grid-cols-2">
-                {/* descripciones */}
-                <div className="p-10 sm:p-10 md:p-15 lg:p-30 xl:p-36">
-                    <motion.img
-                        variants={slideUp(0.2)}
-                        initial="initial"
-                        animate="animate"
-                        src={Logo}
-                        alt="logo del Juego"
-                    />
-                    <motion.p
-                        variants={slideUp(0.3)}
-                        initial="initial"
-                        animate="animate"
-                        className="py-12 text-white"
-                    >
-                        Magic Quest es un emocionante juego de aventuras en un
-                        mundo de fantasía donde te embarcas en una épica
-                        búsqueda mágica. Explora reinos misteriosos, domina
-                        poderosos hechizos y enfréntate a criaturas legendarias
-                        mientras desvelas secretos ocultos y te conviertes en el
-                        héroe supremo. ¡La magia está en tus manos!
-                    </motion.p>
-                    <motion.div
-                        variants={slideUp(1)}
-                        initial="initial"
-                        animate="animate"
-                        className="flex justify-center gap-4"
-                    >
-                        {/* Botón Jugar ahora */}
-                        <a className="bg-purple-600 py-2 px-12 rounded-3xl text-white hover:bg-purple-700 transition-all duration-300 flex items-center cursor-pointer">
-                            Jugar ahora
-                            <i className="ml-2 bi bi-controller text-xl"></i>
-                        </a>
+  return (
+    <section className="flex-1 flex items-center justify-center px-4 pb-16 sm:pb-20 md:pb-24">
+      {/* Panel lila con bordes grandes */}
+      <div className="w-full max-w-7xl bg-[#F6EEFF] rounded-[2.5rem] md:rounded-[3.5rem] p-6 sm:p-10 md:p-12 lg:p-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          
+          {/* Columna izquierda: títulos + CTA */}
+          <div>
+            {/* Logo opcional arriba */}
+            {/* <motion.img variants={slideUp(0.1)} initial="initial" animate="animate" src={Logo} alt="Logo" className="h-10 mb-6" /> */}
 
-                        {/* Botón Ver Gameplay */}
-                        <a className="text-white flex items-center cursor-pointer">
-                            Ver GamePlay
-                            <i className="ml-2 bi bi-youtube text-xl"></i>
-                        </a>
-                    </motion.div>
-                </div>
+            <motion.p
+              variants={slideUp(0.2)}
+              initial="initial"
+              animate="animate"
+              className="text-[#6C2BD9] font-semibold text-2xl"
+            >
+              Bienvenidos
+            </motion.p>
 
-                {/* imagen */}
-                <motion.div
-                    variants={slideInFromSide("right", 0.5)}
-                    initial="initial"
-                    animate="animate"
-                    className="p-10 sm:p-10 md:p-15 lg:p-30 xl:p-36"
-                >
-                    <img src={Personaje} alt="Personaje de juego" />
-                </motion.div>
+            <motion.h1
+              variants={slideUp(0.3)}
+              initial="initial"
+              animate="animate"
+              className="text-[#4C1D95] font-black leading-tight
+                         text-4xl sm:text-5xl md:text-6xl"
+            >
+              Viaja con tu <br />
+              <span className="text-[#5B21B6]">Mascota</span> sin <br />
+              <span className="text-[#5B21B6]">Complicaciones</span>
+            </motion.h1>
+
+            <motion.div
+              variants={slideUp(0.9)}
+              initial="initial"
+              animate="animate"
+              className="mt-8"
+            >
+              <a
+                href="#contacto"
+                className="inline-flex items-center justify-center
+                           px-6 sm:px-8 py-3 sm:py-4 rounded-full
+                           bg-[#A3E635] text-[#1A1A1A] font-extrabold
+                           shadow-[0_8px_0_0_rgba(0,0,0,0.08)]
+                           hover:brightness-105 transition"
+              >
+                Quiero viajar con mi mascota
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Columna derecha: video con borde morado y esquinas redondeadas */}
+          <motion.div
+            variants={slideInFromSide("right", 0.4)}
+            initial="initial"
+            animate="animate"
+            className="flex justify-center"
+          >
+            <div className="relative w-full max-w-xl">
+              {/* marco redondeado y borde grueso morado */}
+    <div className="rounded-[24px] border-[8px] border-[#6D28D9] overflow-hidden">
+  <iframe
+    className="w-full aspect-video"
+    src="https://www.youtube.com/embed/mfdbdytkvXg?rel=0&modestbranding=1"
+    title="Video introductorio"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  ></iframe>
+</div>
+
+
+              {/* Botón play superpuesto */}
+              <button
+                aria-label="Reproducir video"
+                className="absolute inset-0 m-auto h-20 w-20 rounded-full
+                           bg-white/90 text-[#5B21B6] grid place-items-center
+                           shadow-lg hover:scale-105 transition"
+                style={{ top: "50%", transform: "translateY(-50%)", left: 0, right: 0 }}
+                onClick={() => {/* abre modal o redirige a video */}}
+              >
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+
+              {/* leyenda bajo el video */}
+              <p className="mt-2 text-sm text-[#5B21B6] opacity-80 text-center">
+                *video introductorio a los servicios y pasos 1 min
+              </p>
             </div>
-        </section>
-    );
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Hero;
