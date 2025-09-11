@@ -1,61 +1,56 @@
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Banner from "./components/Banner/Banner";
-import Servicios from "./components/Servicios/Servicios"; 
+import Servicios from "./components/Servicios/ServiciosSection";
+import SeccionDestinosCTA from "./components/Servicios/SeccionDestinosCTA";
+/* import SeccionRazonesColombia from "./components/Servicios/SeccionRazonesColombia,"; */
+import SeccionMensaje from "./components/Servicios/SeccionMensaje";
 import Fondo from "./assets/Fondo.png";
 import bgServicios from "./assets/1700x630.jpg";
+
 function App() {
-    const bgImagen = {
-        backgroundImage: `url(${Fondo})`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "bottom",
-        backgroundSize: "cover",
-        position: "relative",
-    };
-
-    return (
-   /*      <div
-         style={bgImagen}
-            className="flex justify-center overflow-hidden min-h-screen" 
-        className="flex flex-col items-center min-h-screen bg-white"
-        >
-            <Navbar />
-            <Hero />
-        </div> */
-       <div className="min-h-screen bg-white">
-      {/* Panel lila full-screen, sin margen arriba, redondeado SOLO abajo */}
+  return (
+    <div className="min-h-screen bg-white">
+      {/* HERO: padding-top para compensar el navbar fijo */}
       <div
-       className="
-    w-full
-    bg-[#F6EEFF]
-    min-h-[70vh] sm:min-h-[80vh] md:min-h-screen
-    rounded-t-none
-    rounded-b-[72px] sm:rounded-b-[120px] md:rounded-b-[180px]
-    overflow-hidden
-    flex flex-col
-  "
-
+        id="inicio"
+        className="
+          w-full
+          bg-[#F6EEFF]
+          pt-16 sm:pt-20                 /* 👈 NUEVO: altura del navbar */
+          min-h-[70vh] sm:min-h-[80vh] md:min-h-screen
+          rounded-t-none
+          rounded-b-[72px] sm:rounded-b-[120px] md:rounded-b-[180px]
+          overflow-hidden
+          flex flex-col
+        "
       >
         <Navbar />
         <Hero />
       </div>
 
-         <div className="h-6 sm:h-10" />   {/* espacio visual */}
-      <Banner />
+      <div className="h-2 sm:h-4" />  {/* separador pequeño */}
 
-      {/* ...aquí puedes seguir con más secciones */}
-      <div className="h-12" />
-   
-      <Servicios
-        bgImage={bgServicios} // Fondo Coliseo
-       /*  leftImage="/assets/pets-luggage.png"   */      // Mascotas+maleta+avión (PNG)
+      {/* Si tu Banner acepta className, dale la misma altura/curva que el Hero */}
+      <Banner
+        className="
+          min-h-[70vh] sm:min-h-[80vh] md:min-h-screen
+          rounded-t-none
+          rounded-b-[72px] sm:rounded-b-[120px] md:rounded-b-[180px]
+        "
       />
 
-      <div className="h-12" /> {/* separador antes de la siguiente sección */}
-    </div>
-   
+      <div className="h-2 sm:h-4" />
 
-    );
+      <Servicios bgImage={bgServicios} />
+      <SeccionMensaje />
+      <SeccionDestinosCTA whatsappHref="https://wa.me/3203446611" /> 
+{/*       <SeccionRazonesColombia /> */}
+   {/*    <SeccionPetNanny />
+      <SeccionAsesoriaCTA href="#contacto" /> */}
+      <div className="h-10 sm:h-12" />
+    </div>
+  );
 }
 
 export default App;
