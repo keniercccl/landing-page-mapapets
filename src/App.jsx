@@ -7,6 +7,7 @@ import SeccionDestinosCTA from "./components/Servicios/SeccionDestinosCTA";
 import SeccionMensaje from "./components/Servicios/SeccionMensaje";
 import Fondo from "./assets/Fondo.png";
 import bgServicios from "./assets/1700x630.jpg";
+import { BotonWhatsApp } from "./components/BotonWhatsApp";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       >
         <Navbar />
         <Hero />
+        {/* <BotonWhatsApp /> */}
       </div>
 
       <div className="h-2 sm:h-4" />  {/* separador pequeño */}
