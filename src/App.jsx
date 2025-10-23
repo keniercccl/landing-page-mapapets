@@ -1,7 +1,7 @@
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Banner from "./components/Banner/Banner";
-//import Servicios from "./components/Servicios/ServiciosSection";
+import Servicios from "./components/Servicios/ServiciosSection";
 import SeccionDestinosCTA from "./components/Servicios/SeccionDestinosCTA";
 import SeccionAsesoriaCTA from "./components/Servicios/SeccionAsesoriaCTA";
 import SeccionRazonesColombia from "./components/Servicios/SeccionRazonesColombia";
@@ -47,7 +47,7 @@ function App() {
 
       <div className="h-2 sm:h-4" />
 
-{/*       <Servicios bgImage={bgServicios} /> */}
+      <Servicios bgImage={bgServicios} /> 
       <SeccionMensaje />
       <SeccionDestinosCTA whatsappHref="https://wa.me/3203446611" /> 
       <SeccionRazonesColombia />

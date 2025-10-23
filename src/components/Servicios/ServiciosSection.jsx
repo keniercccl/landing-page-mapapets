@@ -1,5 +1,22 @@
-/* import React from "react";
+import React from "react";
 
+// Fondo y overlays
+import bgGradient from "../../assets/bg-gradient.png";
+import cloudsBottom from "../../assets/clouds-bottom.png";
+
+// Elementos
+import airplane from "../../assets/airplane.png";
+import pets from "../../assets/pets-suitcase.png";
+import globe from "../../assets/globe.png";
+
+const DocIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-14 h-14">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="none" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M14 2v6h6" fill="none" stroke="currentColor" strokeWidth="1.6" />
+  </svg>
+);
+
+// ✅ Tus servicios reales
 const SERVICES = [
   { id: 1, title: "Trámite ICA en Colombia", desc: "Asesoría de documentos y requisitos para tu mascota." },
   { id: 2, title: "Certificado Veterinario", desc: "Coordinación con aerolínea y veterinario certificado." },
@@ -9,85 +26,129 @@ const SERVICES = [
   { id: 6, title: "Kit viajero", desc: "Entrega de kit viajero para tu mascota." },
 ];
 
-export default function ServiciosSection({
-    bgImage   = "/assets/1700x630.jpg",      // imagen de fondo
-  leftImage = "/assets/pets-luggage.png",  // ilustración lateral (PNG)
-}) {
+const ServiceCard = ({ title, text }) => (
+  <div className="bg-white rounded-[28px] p-5 shadow-[0_10px_28px_rgba(0,0,0,.15)] w-full max-w-[300px] mx-auto">
+    <div className="text-purple-700 flex justify-center mb-3">
+      <DocIcon />
+    </div>
+    <div className="w-full flex justify-center">
+      <span className="inline-block bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-semibold -mb-2 shadow text-center">
+        {title}
+      </span>
+    </div>
+    <div className="mt-4 text-center">
+      <p className="text-slate-600 text-sm leading-snug">{text}</p>
+    </div>
+  </div>
+);
+
+export default function Banner() {
   return (
-    <section id="servicios" className="w-full my-12 px-4">
-      <div
-        className="relative w-full overflow-hidden rounded-2xl shadow-lg bg-cover bg-center"
-        style={{ backgroundImage: `url(${bgImage})` }}
-      >
-        {/* Capa morada suave para contraste del texto */
-  /*       <div className="absolute inset-0 bg-[#5b23a6]/70" /> */
+    <section className="relative w-full overflow-hidden rounded-2xl">
+      {/* 🔑 En móvil NO ponemos min-h fija ni layouts absolutos */}
+      <div className="relative w-full overflow-hidden rounded-2xl shadow-lg md:min-h-[800px]">
 
-/*         {/* Contenido */
-/*         <div className="relative z-10 mx-auto max-w-6xl py-10 sm:py-12 md:py-16"> */
+        {/* Fondo */}
+        <img src={bgGradient} alt="" className="absolute inset-0 w-full h-full object-cover" />
 
-          {/* Título real (visible en móvil también) */}
-       /*    <h2 className="text-white font-extrabold leading-tight
-                         text-2xl sm:text-3xl md:text-4xl">
+        {/* Wedge morado SOLO en desktop */}
+        <div className="hidden md:block absolute top-0 right-[-6%] h-full w-[46%] -skew-x-6 origin-right">
+          <div className="w-full h-full bg-gradient-to-br from-purple-800/90 via-purple-700/85 to-purple-700/80" />
+        </div>
+
+        {/* Título móvil (flujo normal) */}
+        <div className="relative z-40 md:hidden px-6 pt-8">
+          <h2 className="text-white text-3xl font-extrabold leading-tight drop-shadow">
             Servicios que ofrecemos
           </h2>
+        </div>
 
-          {/* Título decorativo enorme – solo en pantallas md+ */
-      /*     <div
-            aria-hidden="true"
-            className="hidden md:block absolute -top-2 left-4 z-0 select-none pointer-events-none
-                       text-white/20 font-extrabold leading-[0.9]
-                       text-[72px] lg:text-[96px] xl:text-[120px]"
-          >
-            Servicios<br />que<br />ofrecemos:
-          </div>  */
+        {/* Título desktop (overlay a la izquierda) */}
+        <div className="relative z-50 max-w-xl pt-16 md:pt-20 pl-6 md:pl-10 hidden md:block">
+          <h2 className="text-white text-6xl md:text-7xl font-extrabold leading-[0.9] drop-shadow">
+            Servicios que<br /> ofrecemos:
+          </h2>
+        </div>
 
-          {/* Ilustración lateral – solo md+ */}
-    /*       <img
-            src={leftImage}
-            alt=""
-            className="hidden md:block absolute -left-10 bottom-0 w-64 lg:w-72 object-contain pointer-events-none select-none"
-            aria-hidden="true"
-          /> */
-
-          {/* Grid de tarjetas */}
-/*           <div className="relative mt-6 sm:mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Grid:
+            - Móvil: flujo normal (NO absolute), con padding top para despegar del título
+            - Desktop: overlay a la derecha */}
+        <div
+          className="
+            relative z-40 w-full px-6 pt-6 pb-10
+            md:absolute md:inset-y-0 md:right-0 md:w-[58%] md:px-10 md:py-10 md:flex md:items-center
+          "
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8 w-full place-items-center">
             {SERVICES.map((s) => (
-              <div
-                key={s.id}
-                className="bg-white/95 backdrop-blur rounded-2xl shadow-md ring-1 ring-black/5 p-5
-                           transition hover:shadow-lg"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="inline-flex h-9 w-9 items-center justify-center
-                                  rounded-full bg-[#6B21A8]/10 text-[#6B21A8]">
-                    {/* ícono simple de documento *
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="h-5 w-5"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                      <path d="M14 2v6h6" />
-                    </svg>
-                  </div>
-
-                  <h3 className="text-[#2a1154] font-bold text-sm sm:text-base">
-                    {s.title}
-                  </h3>
-                </div>
-
-                <p className="mt-3 text-[#2a1154]/80 text-sm leading-relaxed">
-                  {s.desc}
-                </p>
-              </div>
+              <ServiceCard key={s.id} title={s.title} text={s.desc} />
             ))}
           </div>
-        </div> 
-      </div>
+        </div>
+
+        {/* Decorativos:
+            - En móvil los escondemos para que NO tapen las tarjetas
+            - En desktop aparecen */}
+{/* Mascotas SIEMPRE por delante del globo */}
+<img
+    src={pets}
+    alt="Perro y gato"
+    className="
+      absolute bottom-0 left-0 
+      w-[44%] md:w-[40%]
+      z-[60]                 /* Delante del globo */
+      pointer-events-none
+    "
+  />
+
+  {/* 🌍☁️✈️ Globo, nubes y avión detrás */}
+{/* 🌍☁️✈️ Globo, nubes y avión (detrás de mascotas) */}
+<div
+  className="
+    pointer-events-none
+    absolute
+    bottom-[0%]               /* lo bajamos como pusiste */
+    left-[36%] md:left-[29%]  /* ajustes exactos de consola */
+    z-[60]                    /* mayor prioridad visual */
+  "
+>
+  {/* Nubes */}
+  <img
+    src={cloudsBottom}
+    alt="Nubes"
+    className="
+      absolute -bottom-6 left-1/2 -translate-x-1/2
+      w-[30vw] max-w-[550px] opacity-95 z-[40]
+    "
+  />
+
+  {/* Globo */}
+  <img
+    src={globe}
+    alt="Globo"
+    className="
+      relative w-[25vw] max-w-[460px]
+      drop-shadow-xl z-[50]
+    "
+  />
+
+  {/* Avión */}
+  <img
+    src={airplane}
+    alt="Avión"
+    className="
+      absolute top-[26%] -left-[8%]
+      w-[14vw] max-w-[260px]
+      rotate-[-10deg]
+      drop-shadow-2xl
+      z-[55]
+    "
+  />
+</div>
+</div>
+
+
+     
     </section>
   );
-} */
+}
