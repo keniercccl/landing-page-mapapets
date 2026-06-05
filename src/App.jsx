@@ -3,10 +3,14 @@ import Navbar from "./components/Navbar/Navbar";
 import Banner from "./components/Banner/Banner";
 import Servicios from "./components/Servicios/ServiciosSection";
 import SeccionDestinosCTA from "./components/Servicios/SeccionDestinosCTA";
-/* import SeccionRazonesColombia from "./components/Servicios/SeccionRazonesColombia,"; */
+import SeccionAsesoriaCTA from "./components/Servicios/SeccionAsesoriaCTA";
+import SeccionRazonesColombia from "./components/Servicios/SeccionRazonesColombia";
+import SeccionEquipo from "./components/Servicios/SeccionEquipo";
 import SeccionMensaje from "./components/Servicios/SeccionMensaje";
+import Footer from "./components/Footer/Footer";
 import Fondo from "./assets/Fondo.png";
 import bgServicios from "./assets/1700x630.jpg";
+import  BotonWhatsApp  from "./components/BotonWhatsApp";
 
 function App() {
   return (
@@ -27,6 +31,7 @@ function App() {
       >
         <Navbar />
         <Hero />
+      <BotonWhatsApp /> 
       </div>
 
       <div className="h-2 sm:h-4" />  {/* separador pequeño */}
@@ -42,10 +47,13 @@ function App() {
 
       <div className="h-2 sm:h-4" />
 
-      <Servicios bgImage={bgServicios} />
+      <Servicios bgImage={bgServicios} /> 
       <SeccionMensaje />
       <SeccionDestinosCTA whatsappHref="https://wa.me/3203446611" /> 
-{/*       <SeccionRazonesColombia /> */}
+      <SeccionRazonesColombia />
+      <SeccionAsesoriaCTA />
+      <SeccionEquipo />
+       <Footer />
    {/*    <SeccionPetNanny />
       <SeccionAsesoriaCTA href="#contacto" /> */}
       <div className="h-10 sm:h-12" />
