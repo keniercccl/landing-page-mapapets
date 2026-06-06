@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../../assets/Logo.png";
+import Logo from "../../assets/logo_nuevo_1.png";
 
 const NAV_LINKS = [
   { id: 1, title: "Inicio", href: "#inicio" },
@@ -9,9 +9,10 @@ const NAV_LINKS = [
 ];
 
 const NAV_REDES = [
-  { id: 1, title: "WhatsApp", href: "https://wa.me/XXXXXXXXX", icon: "bi bi-whatsapp" },
+  { id: 1, title: "WhatsApp", href: "https://wa.me/+573203446611", icon: "bi bi-whatsapp" },
   { id: 2, title: "Facebook", href: "https://facebook.com", icon: "bi bi-facebook" },
   { id: 3, title: "Instagram", href: "https://instagram.com", icon: "bi bi-instagram" },
+  { id: 4, title: "TikTok", href: "https://instagram.com", icon: "bi bi-tiktok" },
 ];
 
 export default function Navbar() {
@@ -28,7 +29,7 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
         {/* LOGO */}
         <a href="#inicio" className="flex items-center gap-2">
-          <img src={Logo} alt="MAPAPETS" className="h-8 sm:h-12 xl:h-14 w-auto" />
+          <img src={Logo} alt="MAPAPETS" className="h-20 sm:h-12 xl:h-20 w-auto" />
         </a>
 
         {/* LINKS desktop */}

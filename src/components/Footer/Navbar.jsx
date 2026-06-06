@@ -12,6 +12,7 @@ const NAV_REDES = [
   { id: 1, title: "WhatsApp", href: "https://wa.me/XXXXXXXXX", icon: "bi bi-whatsapp" },
   { id: 2, title: "Facebook", href: "https://facebook.com", icon: "bi bi-facebook" },
   { id: 3, title: "Instagram", href: "https://instagram.com", icon: "bi bi-instagram" },
+  { id: 4, title: "TitTok", href: "https://instagram.com", icon: "bi bi-tiktok" },
 ];
 
 export default function Navbar() {

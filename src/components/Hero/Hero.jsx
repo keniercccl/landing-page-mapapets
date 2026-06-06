@@ -43,7 +43,8 @@ const Hero = () => {
               className="mt-8"
             >
               <a
-                href="#contacto"
+                href={import.meta.env.VITE_GOOGLE_FORM}
+                target="_blank"
                 className="inline-flex items-center justify-center
                            px-6 sm:px-8 py-3 sm:py-4 rounded-full
                            bg-[#A3E635] text-[#1A1A1A] font-extrabold
