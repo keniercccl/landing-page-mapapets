@@ -4,7 +4,7 @@ import fotoDefault from "../../assets/1080x1080 copia 3.jpg"; // cambia por la t
 export default function SeccionMensaje({ imagen = fotoDefault }) {
   return (
     <section className="w-full my-12">
-<div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-12 gap-8 items-center">
           {/* TEXTO */}
           <div className="col-span-12 md:col-span-6">

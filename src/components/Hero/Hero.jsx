@@ -9,7 +9,7 @@ const Hero = () => {
       {/* Panel lila con bordes grandes */}
       <div className="w-full max-w-7xl bg-[#F6EEFF] rounded-[2.5rem] md:rounded-[3.5rem] p-6 sm:p-10 md:p-12 lg:p-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          
+
           {/* Columna izquierda: títulos + CTA */}
           <div>
             {/* Logo opcional arriba */}
@@ -65,15 +65,15 @@ const Hero = () => {
           >
             <div className="relative w-full max-w-xl">
               {/* marco redondeado y borde grueso morado */}
-    <div className="rounded-[24px] border-[8px] border-[#6D28D9] overflow-hidden">
-  <iframe
-    className="w-full aspect-video"
-    src="https://www.youtube.com/embed/mfdbdytkvXg?rel=0&modestbranding=1"
-    title="Video introductorio"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowFullScreen
-  ></iframe>
-</div>
+              <div className="rounded-[24px] border-[8px] border-[#6D28D9] overflow-hidden">
+                <iframe
+                  className="w-full aspect-video"
+                  src="https://www.youtube.com/embed/mfdbdytkvXg?rel=0&modestbranding=1"
+                  title="Video introductorio"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
 
 
               {/* Botón play superpuesto */}
@@ -83,7 +83,7 @@ const Hero = () => {
                            bg-white/90 text-[#5B21B6] grid place-items-center
                            shadow-lg hover:scale-105 transition"
                 style={{ top: "50%", transform: "translateY(-50%)", left: 0, right: 0 }}
-                onClick={() => {/* abre modal o redirige a video */}}
+                onClick={() => {/* abre modal o redirige a video */ }}
               >
                 <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M8 5v14l11-7z"></path>

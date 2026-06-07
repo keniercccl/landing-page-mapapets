@@ -10,9 +10,9 @@ const NAV_LINKS = [
 
 const NAV_REDES = [
   { id: 1, title: "WhatsApp", href: "https://wa.me/+573203446611", icon: "bi bi-whatsapp" },
-  { id: 2, title: "Facebook", href: "https://facebook.com", icon: "bi bi-facebook" },
-  { id: 3, title: "Instagram", href: "https://instagram.com", icon: "bi bi-instagram" },
-  { id: 4, title: "TikTok", href: "https://instagram.com", icon: "bi bi-tiktok" },
+  { id: 2, title: "Facebook", href: "https://www.facebook.com/Mapapets", icon: "bi bi-facebook" },
+  { id: 3, title: "Instagram", href: "https://www.instagram.com/mapa.pets/", icon: "bi bi-instagram" },
+  { id: 4, title: "TikTok", href: "https://www.tiktok.com/@mapa.pets", icon: "bi bi-tiktok" },
 ];
 
 export default function Navbar() {
@@ -80,9 +80,8 @@ export default function Navbar() {
 
       {/* MENÚ móvil */}
       <div
-        className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        } bg-white/95 backdrop-blur border-t border-black/5`}
+        className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          } bg-white/95 backdrop-blur border-t border-black/5`}
       >
         <div className="px-4 py-4 space-y-3">
           <ul className="grid grid-cols-2 gap-3">

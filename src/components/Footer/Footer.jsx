@@ -9,82 +9,82 @@ export default function Footer({
 }) {
   return (
     <footer className="w-full bg-[#5c1cb8] text-white pt-3 pb-14 rounded-t-[36px]">
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-    {/* Layout principal: mapa a la izquierda, columna derecha */}
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
-      
-      {/* Mapa (izquierda) */}
-      <div className="md:col-span-6">
-        {/* 👇 bajamos el bloque del mapa */}
-        <div className="rounded-xl overflow-hidden ring-1 ring-black/10 shadow-md bg-white mt-4 md:mt-8 lg:mt-12">
-          <div className="aspect-[16/10] w-full">
-            <iframe
-              src={mapEmbedSrc}
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="h-full w-full"
-              title="Ubicación Mapapets"
-            />
-          </div>
-        </div>
-      </div>
+        {/* Layout principal: mapa a la izquierda, columna derecha */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
 
-      {/* Columna derecha: “¿Tienes dudas?” + burbujas */}
-      {/* 👇 la dejamos centrada verticalmente, sin márgenes extra grandes */}
-      <div className="md:col-span-6 flex flex-col justify-center">
-        <div className="mt-4 md:mt-6">
-          <p className="font-semibold mb-2">¿Tienes dudas?</p>
-
-          <div className="flex flex-wrap gap-2 mb-3">
-            <Chip>
-              <span className="inline-flex size-4 items-center justify-center rounded-full bg-red-500/90 text-[10px] mr-2">☎</span>
-              {phone1}
-            </Chip>
-            <Chip>
-              <span className="inline-flex size-4 items-center justify-center rounded-full bg-red-500/90 text-[10px] mr-2">☎</span>
-              {phone2}
-            </Chip>
+          {/* Mapa (izquierda) */}
+          <div className="md:col-span-6">
+            {/* 👇 bajamos el bloque del mapa */}
+            <div className="rounded-xl overflow-hidden ring-1 ring-black/10 shadow-md bg-white mt-4 md:mt-8 lg:mt-12">
+              <div className="aspect-[16/10] w-full">
+                <iframe
+                  src={mapEmbedSrc}
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="h-full w-full"
+                  title="Ubicación Mapapets"
+                />
+              </div>
+            </div>
           </div>
 
-          <Chip className="mb-6">
-            <span className="inline-flex size-4 items-center justify-center rounded-full bg-pink-500/90 text-[10px] mr-2">📍</span>
-            {address}
-          </Chip>
+          {/* Columna derecha: “¿Tienes dudas?” + burbujas */}
+          {/* 👇 la dejamos centrada verticalmente, sin márgenes extra grandes */}
+          <div className="md:col-span-6 flex flex-col justify-center">
+            <div className="mt-4 md:mt-6">
+              <p className="font-semibold mb-2">¿Tienes dudas?</p>
 
-          {/* Burbuja grande */}
-          <div
-            className="
+              <div className="flex flex-wrap gap-2 mb-3">
+                <Chip>
+                  <span className="inline-flex size-4 items-center justify-center rounded-full bg-red-500/90 text-[10px] mr-2">☎</span>
+                  {phone1}
+                </Chip>
+                <Chip>
+                  <span className="inline-flex size-4 items-center justify-center rounded-full bg-red-500/90 text-[10px] mr-2">☎</span>
+                  {phone2}
+                </Chip>
+              </div>
+
+              <Chip className="mb-6">
+                <span className="inline-flex size-4 items-center justify-center rounded-full bg-pink-500/90 text-[10px] mr-2">📍</span>
+                {address}
+              </Chip>
+
+              {/* Burbuja grande */}
+              <div
+                className="
               w-full rounded-[28px] bg-[#6b2acb]/35 px-6 py-5
               border border-dashed border-white/60
               shadow-[0_0_0_3px_rgba(255,255,255,0.15)_inset]
             "
-          >
-            <p className="text-center font-semibold leading-snug">
-              ¡Nos encargamos de todo <br className="hidden sm:block" />
-              para tu viaje con tu mascota!
-            </p>
+              >
+                <p className="text-center font-semibold leading-snug">
+                  ¡Nos encargamos de todo <br className="hidden sm:block" />
+                  para tu viaje con tu mascota!
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    {/* LOGO inferior centrado (forzado a blanco) */}
-    <div className="mt-10 flex justify-center">
-      {Logo ? (
-        <img
-          src={Logo}
-          alt="MAPAPETS"
-          className="h-10 sm:h-12 object-contain filter brightness-0 invert opacity-95"
-        />
-      ) : (
-        <span className="text-white/90 font-extrabold text-lg">MAPAPETS</span>
-      )}
-    </div>
-  </div>
-</footer>
+        {/* LOGO inferior centrado (forzado a blanco) */}
+        <div className="mt-10 flex justify-center">
+          {Logo ? (
+            <img
+              src={Logo}
+              alt="MAPAPETS"
+              className="h-10 sm:h-12 object-contain filter brightness-0 invert opacity-95"
+            />
+          ) : (
+            <span className="text-white/90 font-extrabold text-lg">MAPAPETS</span>
+          )}
+        </div>
+      </div>
+    </footer>
 
   );
 }

@@ -10,7 +10,7 @@ import SeccionMensaje from "./components/Servicios/SeccionMensaje";
 import Footer from "./components/Footer/Footer";
 import Fondo from "./assets/Fondo.png";
 import bgServicios from "./assets/1700x630.jpg";
-import  BotonWhatsApp  from "./components/BotonWhatsApp";
+import BotonWhatsApp from "./components/BotonWhatsApp";
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
       >
         <Navbar />
         <Hero />
-      <BotonWhatsApp /> 
+        <BotonWhatsApp />
       </div>
 
       <div className="h-2 sm:h-4" />  {/* separador pequeño */}
@@ -47,14 +47,14 @@ function App() {
 
       <div className="h-2 sm:h-4" />
 
-      <Servicios bgImage={bgServicios} /> 
+      <Servicios bgImage={bgServicios} />
       <SeccionMensaje />
-      <SeccionDestinosCTA whatsappHref="https://wa.me/3203446611" /> 
+      <SeccionDestinosCTA whatsappHref="https://wa.me/3203446611" />
       <SeccionRazonesColombia />
       <SeccionAsesoriaCTA />
       <SeccionEquipo />
-       <Footer />
-   {/*    <SeccionPetNanny />
+      <Footer />
+      {/*    <SeccionPetNanny />
       <SeccionAsesoriaCTA href="#contacto" /> */}
       <div className="h-10 sm:h-12" />
     </div>

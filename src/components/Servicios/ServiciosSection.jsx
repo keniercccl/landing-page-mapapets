@@ -89,66 +89,66 @@ export default function Banner() {
         {/* Decorativos:
             - En móvil los escondemos para que NO tapen las tarjetas
             - En desktop aparecen */}
-{/* Mascotas SIEMPRE por delante del globo */}
-<img
-    src={pets}
-    alt="Perro y gato"
-    className="
+        {/* Mascotas SIEMPRE por delante del globo */}
+        <img
+          src={pets}
+          alt="Perro y gato"
+          className="
       absolute bottom-0 left-0 
       w-[44%] md:w-[40%]
       z-[60]                 /* Delante del globo */
       pointer-events-none
     "
-  />
+        />
 
-  {/* 🌍☁️✈️ Globo, nubes y avión detrás */}
-{/* 🌍☁️✈️ Globo, nubes y avión (detrás de mascotas) */}
-<div
-  className="
+        {/* 🌍☁️✈️ Globo, nubes y avión detrás */}
+        {/* 🌍☁️✈️ Globo, nubes y avión (detrás de mascotas) */}
+        <div
+          className="
     pointer-events-none
     absolute
     bottom-[0%]               /* lo bajamos como pusiste */
     left-[36%] md:left-[29%]  /* ajustes exactos de consola */
     z-[60]                    /* mayor prioridad visual */
   "
->
-  {/* Nubes */}
-  <img
-    src={cloudsBottom}
-    alt="Nubes"
-    className="
+        >
+          {/* Nubes */}
+          <img
+            src={cloudsBottom}
+            alt="Nubes"
+            className="
       absolute -bottom-6 left-1/2 -translate-x-1/2
       w-[30vw] max-w-[550px] opacity-95 z-[40]
     "
-  />
+          />
 
-  {/* Globo */}
-  <img
-    src={globe}
-    alt="Globo"
-    className="
+          {/* Globo */}
+          <img
+            src={globe}
+            alt="Globo"
+            className="
       relative w-[25vw] max-w-[460px]
       drop-shadow-xl z-[50]
     "
-  />
+          />
 
-  {/* Avión */}
-  <img
-    src={airplane}
-    alt="Avión"
-    className="
+          {/* Avión */}
+          <img
+            src={airplane}
+            alt="Avión"
+            className="
       absolute top-[26%] -left-[8%]
       w-[14vw] max-w-[260px]
       rotate-[-10deg]
       drop-shadow-2xl
       z-[55]
     "
-  />
-</div>
-</div>
+          />
+        </div>
+      </div>
 
 
-     
+
     </section>
   );
 }

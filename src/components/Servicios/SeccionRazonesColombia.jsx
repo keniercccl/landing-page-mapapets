@@ -68,16 +68,16 @@ export default function SeccionRazonesColombia() {
           <div className="bg-[#5b23a6] rounded-[32px] p-5 sm:p-8 shadow">
             <div className="flex flex-col sm:flex-row sm:items-center gap-6">
               {Penny ? (
-          <img
-            src={Penny}
-            alt="Pet Nanny"
-            className="h-14 sm:h-16 md:h-20 w-auto"
-          />
-        ) : (
-          <span className="text-white font-semibold">Pet Nanny</span>
-        )}
-     
-              
+                <img
+                  src={Penny}
+                  alt="Pet Nanny"
+                  className="h-14 sm:h-16 md:h-20 w-auto"
+                />
+              ) : (
+                <span className="text-white font-semibold">Pet Nanny</span>
+              )}
+
+
               <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-white rounded-2xl shadow p-4">
                   <p className="font-bold text-[#2a1154] text-sm">Fecha: 08/04/2025</p>
