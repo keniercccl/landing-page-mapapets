@@ -29,7 +29,11 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
         {/* LOGO */}
         <a href="#inicio" className="flex items-center gap-2">
-          <img src={Logo} alt="MAPAPETS" className="h-20 sm:h-12 xl:h-20 w-auto" />
+          <img
+            src={Logo}
+            alt="MAPAPETS"
+            className="h-14 sm:h-16 lg:h-20 xl:h-28 w-auto object-contain"
+          />
         </a>
 
         {/* LINKS desktop */}

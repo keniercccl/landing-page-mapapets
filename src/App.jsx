@@ -8,7 +8,6 @@ import SeccionRazonesColombia from "./components/Servicios/SeccionRazonesColombi
 import SeccionEquipo from "./components/Servicios/SeccionEquipo";
 import SeccionMensaje from "./components/Servicios/SeccionMensaje";
 import Footer from "./components/Footer/Footer";
-import Fondo from "./assets/Fondo.png";
 import bgServicios from "./assets/1700x630.jpg";
 import BotonWhatsApp from "./components/BotonWhatsApp";
 
