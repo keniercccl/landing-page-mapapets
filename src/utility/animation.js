@@ -31,6 +31,7 @@ export const slideInFromSide = (direction = "left", delay) => {
     },
   };
 };
+
 export const fadeUp = {
   hidden: {
     opacity: 0,
@@ -73,10 +74,10 @@ export const slideRight = {
   },
 };
 
-export const zoomIn = {
+export const scaleIn = {
   hidden: {
     opacity: 0,
-    scale: 0.7,
+    scale: 0.8,
   },
   visible: {
     opacity: 1,
