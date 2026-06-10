@@ -3,33 +3,34 @@ import { motion, useInView } from "framer-motion";
 
 import coSvg from "../../assets/co.svg";
 import Penny from "../../assets/penny.png";
-import PetNannySvg from "../../assets/pet-nanny.png"; // SVG decorativo
+import PetNannySvg from "../../assets/pet-nanny.png";
 
 const CITIES = [
-  "Armenia",
-  "Barranquilla",
   "Bogotá",
-  "Bucaramanga",
+  "Medellín",
   "Cali",
   "Cartagena",
-  "Cúcuta",
-  "Ibagué",
-  "Medellín",
-  "Manizales",
+  "Barranquilla",
+  "Bucaramanga",
   "Pereira",
-  "Popayán",
+  "Manizales",
+  "Armenia",
+  "Ibagué",
+  "Cúcuta",
   "Neiva",
   "Villavicencio",
-  "Yopal",
   "Montería",
   "Sincelejo",
   "Valledupar",
+  "Popayán",
+  "Yopal",
 ];
 
-function AnimatedCounter({ target = 1000, duration = 2000 }) {
+function AnimatedCounter({ target = 1000, duration = 1800 }) {
   const [count, setCount] = useState(0);
 
   const ref = useRef(null);
+
   const isInView = useInView(ref, {
     once: true,
     margin: "-100px",
@@ -58,45 +59,70 @@ function AnimatedCounter({ target = 1000, duration = 2000 }) {
     requestAnimationFrame(animate);
   }, [isInView, target, duration]);
 
-  return (
-    <div ref={ref}>
-      {count.toLocaleString()}
-    </div>
-  );
+  return <span ref={ref}>{count.toLocaleString()}</span>;
 }
 
-const Pill = ({ children, id }) => (
-  <motion.div
-    id={id}
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.4 }}
-    className="w-full rounded-full bg-[#6B21A8] text-white text-center font-bold py-3 px-4 shadow-md text-sm sm:text-base"
-  >
-    {children}
-  </motion.div>
-);
+function BenefitCard({ icon, text }) {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      className="
+        bg-white
+        rounded-2xl
+        p-4
+        shadow-sm
+        border
+        border-[#E9D5FF]
+        flex
+        items-center
+        gap-3
+      "
+    >
+      <i
+        className={`${icon} text-[#6B21A8] text-xl flex-shrink-0`}
+      />
+      <span className="font-medium text-[#2A1154]">
+        {text}
+      </span>
+    </motion.div>
+  );
+}
 
 export default function SeccionRazonesColombia() {
   return (
     <section
       id="razones-colombia"
-      className="relative w-full py-16 overflow-hidden"
+      className="relative py-20 overflow-hidden"
     >
-      {/* Fondo */}
-      <div className="absolute inset-0 bg-[#6B21A8]/8" />
+      {/* Background */}
+      <div
+        className="
+          absolute
+          inset-0
+          bg-gradient-to-b
+          from-[#F8F3FF]
+          via-[#F4ECFF]
+          to-[#FAF7FF]
+        "
+      />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          className="text-center mb-12"
         >
           <h2
             id="titulo-razones"
-            className="text-2xl md:text-3xl font-extrabold text-[#2A1154] mb-6"
+            className="
+              text-3xl
+              md:text-4xl
+              font-extrabold
+              text-[#2A1154]
+              mb-6
+            "
           >
             ¿Por qué elegir{" "}
             <span className="text-[#6B21A8]">
@@ -104,79 +130,167 @@ export default function SeccionRazonesColombia() {
             </span>
             ?
           </h2>
+
+          {/* Social Proof */}
+          <div id="social-proof">
+            <div
+              className="
+                text-4xl
+                md:text-5xl
+                font-black
+                text-[#6B21A8]
+              "
+            >
+              +<AnimatedCounter target={1000} />
+            </div>
+
+            <p
+              className="
+                mt-2
+                text-lg
+                font-semibold
+                text-[#2A1154]
+              "
+            >
+              Mascotas viajeras felices
+            </p>
+
+            <div
+              className="
+                flex
+                justify-center
+                items-center
+                gap-1
+                mt-3
+                text-yellow-400
+                text-xl
+              "
+            >
+              ★★★★★
+            </div>
+
+            <p
+              className="
+                text-sm
+                md:text-base
+                text-[#2A1154]/70
+                mt-2
+              "
+            >
+              Más de 1.000 familias han confiado
+              en nosotros para el traslado de sus mascotas.
+            </p>
+          </div>
         </motion.div>
 
-        {/* Razones */}
+        {/* Beneficios */}
         <div
-          id="lista-razones"
-          className="space-y-4 mb-12"
+          id="beneficios-principales"
+          className="
+            grid
+            grid-cols-1
+            md:grid-cols-3
+            gap-4
+            mb-16
+          "
         >
-          <Pill id="contador-mascotas">
-            <span className="inline-flex items-center gap-2">
-              Más de
-              <AnimatedCounter target={1000} />
-              mascotas han viajado con nosotros
-            </span>
-          </Pill>
+          <BenefitCard
+            icon="bi bi-airplane"
+            text="Más de 1.000 mascotas viajeras"
+          />
 
-          <Pill id="tramites">
-            Trámites rápidos, seguros y sin estrés
-          </Pill>
+          <BenefitCard
+            icon="bi bi-shield-check"
+            text="Trámites rápidos, seguros y sin estrés"
+          />
 
-          <Pill id="atencion">
-            Atención personalizada, como si fuera nuestro propio peludo
-          </Pill>
+          <BenefitCard
+            icon="bi bi-heart"
+            text="Atención personalizada para cada familia"
+          />
         </div>
 
-        {/* Mapa + ciudades */}
+        {/* Cobertura */}
         <div
           id="cobertura-colombia"
-          className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
+          className="
+            grid
+            grid-cols-1
+            lg:grid-cols-2
+            gap-10
+            items-center
+            mb-20
+          "
         >
-          {/* MAPA */}
+          {/* Mapa */}
           <motion.div
-            id="mapa-colombia"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <div className="bg-white rounded-3xl shadow-lg p-6">
-              <img
-                src={coSvg}
-                alt="Mapa de Colombia"
-                className="
-                  w-[180px]
-                  sm:w-[220px]
-                  md:w-[260px]
-                  lg:w-[280px]
-                  h-auto
-                  object-contain
-                "
-              />
-            </div>
+            <img
+              src={coSvg}
+              alt="Cobertura nacional en Colombia"
+              className="
+                w-[180px]
+                sm:w-[220px]
+                md:w-[260px]
+                h-auto
+              "
+            />
           </motion.div>
 
-          {/* CIUDADES */}
+          {/* Ciudades */}
           <motion.div
-            id="ciudades-colombia"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl md:text-2xl font-bold text-[#2A1154] mb-4">
-              Llegamos a toda{" "}
-              <span className="text-[#6B21A8]">
-                Colombia
-              </span>
+            <h3
+              className="
+                text-2xl
+                font-bold
+                text-[#2A1154]
+                mb-2
+              "
+            >
+              Cobertura Nacional
             </h3>
 
-            <div className="bg-white rounded-3xl shadow-lg p-6">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 text-sm md:text-base text-[#2A1154]/80">
-                {CITIES.map((city) => (
-                  <div key={city}>{city}</div>
-                ))}
-              </div>
+            <p
+              className="
+                text-[#2A1154]/70
+                mb-6
+              "
+            >
+              Llegamos a las principales ciudades de Colombia.
+            </p>
+
+            <div
+              className="
+                flex
+                flex-wrap
+                gap-2
+              "
+            >
+              {CITIES.map((city) => (
+                <motion.span
+                  key={city}
+                  whileHover={{ scale: 1.05 }}
+                  className="
+                    px-4
+                    py-2
+                    rounded-full
+                    bg-[#E9D5FF]
+                    text-[#5A189A]
+                    text-sm
+                    font-medium
+                  "
+                >
+                  {city}
+                </motion.span>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -187,175 +301,131 @@ export default function SeccionRazonesColombia() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mt-16"
         >
           <div
             className="
-      relative
-      overflow-hidden
-      bg-[#5A189A]
-      rounded-[32px]
-      px-6
-      py-8
-      md:px-8
-      lg:px-12
-      lg:py-10
-      shadow-xl
-    "
+              relative
+              overflow-hidden
+              bg-[#5A189A]
+              rounded-[32px]
+              p-6
+              md:p-10
+              shadow-xl
+            "
           >
-            {/* Decoración */}
             <div
               className="
-        absolute
-        -top-20
-        -right-20
-        w-60
-        h-60
-        rounded-full
-        bg-white/5
-      "
+                absolute
+                -top-24
+                -right-24
+                w-72
+                h-72
+                rounded-full
+                bg-white/5
+              "
             />
 
             <div
               className="
-        relative
-        grid
-        grid-cols-1
-        lg:grid-cols-12
-        gap-8
-        items-center
-      "
+                relative
+                grid
+                grid-cols-1
+                lg:grid-cols-12
+                gap-8
+                items-center
+              "
             >
-              {/* CONTENIDO */}
-              <div
-                id="pet-nanny-content"
-                className="lg:col-span-7 text-center lg:text-left"
-              >
-                {/* Logo */}
+              {/* Texto */}
+              <div className="lg:col-span-7">
                 <img
-                  id="logo-pet-nanny"
                   src={Penny}
                   alt="Pet Nanny"
                   className="
-            h-16
-            md:h-20
-            w-auto
-            mx-auto
-            lg:mx-0
-            mb-5
-          "
+                    h-16
+                    md:h-20
+                    w-auto
+                    mb-6
+                  "
                 />
 
-                {/* Título */}
                 <h3
-                  id="pet-nanny-title"
                   className="
-            text-white
-            font-bold
-            text-2xl
-            md:text-3xl
-            mb-4
-          "
+                    text-white
+                    text-2xl
+                    md:text-3xl
+                    font-bold
+                    mb-4
+                  "
                 >
                   Tu mascota nunca viaja sola
                 </h3>
 
-                {/* Descripción */}
                 <p
-                  id="pet-nanny-description"
                   className="
-            text-white/90
-            text-sm
-            md:text-base
-            leading-relaxed
-            max-w-2xl
-            mx-auto
-            lg:mx-0
-            mb-6
-          "
+                    text-white/90
+                    leading-relaxed
+                    mb-6
+                  "
                 >
                   Nuestro servicio Pet Nanny acompaña a tu mascota
-                  durante todo el proceso de viaje, brindando apoyo,
-                  seguimiento y atención personalizada para una
-                  experiencia segura y tranquila.
+                  durante todo el proceso de viaje para brindar
+                  tranquilidad, seguridad y apoyo personalizado.
                 </p>
 
-                {/* Beneficios */}
                 <div
-                  id="pet-nanny-benefits"
                   className="
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            gap-3
-            mb-6
-          "
+                    grid
+                    grid-cols-1
+                    sm:grid-cols-2
+                    gap-3
+                    text-white
+                    mb-6
+                  "
                 >
-                  <div className="flex items-center gap-2 text-white">
-                    <span>✓</span>
-                    <span>Atención personalizada</span>
-                  </div>
-
-                  <div className="flex items-center gap-2 text-white">
-                    <span>✓</span>
-                    <span>Seguimiento continuo</span>
-                  </div>
-
-                  <div className="flex items-center gap-2 text-white">
-                    <span>✓</span>
-                    <span>Acompañamiento durante el viaje</span>
-                  </div>
-
-                  <div className="flex items-center gap-2 text-white">
-                    <span>✓</span>
-                    <span>Mayor tranquilidad para tu familia</span>
-                  </div>
+                  <span>✓ Atención personalizada</span>
+                  <span>✓ Seguimiento continuo</span>
+                  <span>✓ Acompañamiento durante el viaje</span>
+                  <span>✓ Tranquilidad para tu familia</span>
                 </div>
 
-                {/* CTA */}
                 <button
-                  id="pet-nanny-button"
+                  id="pet-nanny-cta"
                   className="
-            bg-white
-            text-[#5A189A]
-            font-bold
-            px-6
-            py-3
-            rounded-full
-            transition-all
-            duration-300
-            hover:scale-105
-            hover:shadow-lg
-          "
+                    bg-white
+                    text-[#5A189A]
+                    font-bold
+                    px-6
+                    py-3
+                    rounded-full
+                    transition-all
+                    duration-300
+                    hover:scale-105
+                  "
                 >
-                  Solicitar información
+                  Solicitar asesoría
                 </button>
               </div>
 
-              {/* ILUSTRACIÓN */}
+              {/* Imagen */}
               <div
-                id="pet-nanny-image-container"
                 className="
-          lg:col-span-5
-          flex
-          justify-center
-        "
+                  lg:col-span-5
+                  flex
+                  justify-center
+                "
               >
                 <img
-                  id="pet-nanny-svg"
                   src={PetNannySvg}
-                  alt="Mascota viajera"
+                  alt="Servicio Pet Nanny"
                   className="
-            h-52
-            sm:h-60
-            md:h-72
-            lg:h-80
-            xl:h-96
-            w-auto
-            object-contain
-            drop-shadow-2xl
-          "
+                    h-52
+                    sm:h-64
+                    md:h-72
+                    lg:h-80
+                    xl:h-96
+                    w-auto
+                    object-contain
+                  "
                 />
               </div>
             </div>
