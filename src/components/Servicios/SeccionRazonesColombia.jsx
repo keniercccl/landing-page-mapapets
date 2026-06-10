@@ -1,166 +1,367 @@
-import React from "react";
-// ❌ Quita esto si aún lo tienes
-// import { ReactComponent as ColombiaMap } from "../../assets/co.svg";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
-// ✅ Usa el SVG como imagen
 import coSvg from "../../assets/co.svg";
 import Penny from "../../assets/penny.png";
+import PetNannySvg from "../../assets/pet-nanny.png"; // SVG decorativo
 
-const Pill = ({ children }) => (
-  <div className="w-full rounded-full bg-[#6B21A8] text-white text-center text-sm sm:text-base font-bold py-2.5 shadow">
+const CITIES = [
+  "Armenia",
+  "Barranquilla",
+  "Bogotá",
+  "Bucaramanga",
+  "Cali",
+  "Cartagena",
+  "Cúcuta",
+  "Ibagué",
+  "Medellín",
+  "Manizales",
+  "Pereira",
+  "Popayán",
+  "Neiva",
+  "Villavicencio",
+  "Yopal",
+  "Montería",
+  "Sincelejo",
+  "Valledupar",
+];
+
+function AnimatedCounter({ target = 1000, duration = 2000 }) {
+  const [count, setCount] = useState(0);
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px",
+  });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let startTime;
+
+    const animate = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+
+      const progress = Math.min(
+        (currentTime - startTime) / duration,
+        1
+      );
+
+      setCount(Math.floor(progress * target));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [isInView, target, duration]);
+
+  return (
+    <div ref={ref}>
+      {count.toLocaleString()}
+    </div>
+  );
+}
+
+const Pill = ({ children, id }) => (
+  <motion.div
+    id={id}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.4 }}
+    className="w-full rounded-full bg-[#6B21A8] text-white text-center font-bold py-3 px-4 shadow-md text-sm sm:text-base"
+  >
     {children}
-  </div>
+  </motion.div>
 );
 
 export default function SeccionRazonesColombia() {
   return (
-    <section className="w-full my-12 bg-[#f8f3ff] py-8">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="text-[#2a1154] font-extrabold mb-4 text-lg">
-          ¿Por qué elegir <span className="text-[#6B21A8]">Mapapets</span>?
-        </p>
+    <section
+      id="razones-colombia"
+      className="relative w-full py-16 overflow-hidden"
+    >
+      {/* Fondo */}
+      <div className="absolute inset-0 bg-[#6B21A8]/8" />
 
-        <div className="space-y-3 mb-10">
-          <Pill>+1000 mascotas viajeras felices</Pill>
-          <Pill>Trámites rápidos, seguros y sin estrés</Pill>
-          <Pill>Atención personalizada, como si fuera nuestro propio peludo</Pill>
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2
+            id="titulo-razones"
+            className="text-2xl md:text-3xl font-extrabold text-[#2A1154] mb-6"
+          >
+            ¿Por qué elegir{" "}
+            <span className="text-[#6B21A8]">
+              Mapapets
+            </span>
+            ?
+          </h2>
+        </motion.div>
+
+        {/* Razones */}
+        <div
+          id="lista-razones"
+          className="space-y-4 mb-12"
+        >
+          <Pill id="contador-mascotas">
+            <span className="inline-flex items-center gap-2">
+              Más de
+              <AnimatedCounter target={1000} />
+              mascotas han viajado con nosotros
+            </span>
+          </Pill>
+
+          <Pill id="tramites">
+            Trámites rápidos, seguros y sin estrés
+          </Pill>
+
+          <Pill id="atencion">
+            Atención personalizada, como si fuera nuestro propio peludo
+          </Pill>
         </div>
 
-        <div className="grid grid-cols-12 gap-6 items-center">
-          {/* Mapa */}
-          <div className="col-span-12 md:col-span-5 flex justify-center">
-            <div className="rounded-2xl bg-white ring-1 ring-black/5 p-4 shadow">
-              {/* ⬇️ Imagen en lugar del componente SVG */}
+        {/* Mapa + ciudades */}
+        <div
+          id="cobertura-colombia"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
+        >
+          {/* MAPA */}
+          <motion.div
+            id="mapa-colombia"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            <div className="bg-white rounded-3xl shadow-lg p-6">
               <img
                 src={coSvg}
                 alt="Mapa de Colombia"
-                className="w-[220px] h-[260px] object-contain"
+                className="
+                  w-[180px]
+                  sm:w-[220px]
+                  md:w-[260px]
+                  lg:w-[280px]
+                  h-auto
+                  object-contain
+                "
               />
             </div>
-          </div>
+          </motion.div>
 
-          {/* Ciudades */}
-          <div className="col-span-12 md:col-span-7">
-            <h4 className="font-extrabold text-[#2a1154] mb-3 text-lg">
-              Llegamos a <span className="text-[#6B21A8]">toda Colombia</span>
-            </h4>
-            <div className="rounded-2xl bg-white ring-1 ring-black/5 p-6 shadow">
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-2 text-sm text-[#2a1154]/80">
-                <ul>
-                  <li>Armenia</li><li>Barranquilla</li><li>Bogotá</li>
-                  <li>Bucaramanga</li><li>Cali</li><li>Cartagena</li>
-                </ul>
-                <ul>
-                  <li>Cúcuta</li><li>Ibagué</li><li>Medellín</li>
-                  <li>Manizales</li><li>Pereira</li><li>Popayán</li>
-                </ul>
-                <ul>
-                  <li>Neiva</li><li>Villavicencio</li><li>Yopal</li>
-                  <li>Montería</li><li>Sincelejo</li><li>Valledupar</li>
-                </ul>
+          {/* CIUDADES */}
+          <motion.div
+            id="ciudades-colombia"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl md:text-2xl font-bold text-[#2A1154] mb-4">
+              Llegamos a toda{" "}
+              <span className="text-[#6B21A8]">
+                Colombia
+              </span>
+            </h3>
+
+            <div className="bg-white rounded-3xl shadow-lg p-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 text-sm md:text-base text-[#2A1154]/80">
+                {CITIES.map((city) => (
+                  <div key={city}>{city}</div>
+                ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Franja Pet Nanny (opcional si la usas aquí) */}
-        <div className="mt-10">
-          <div className="bg-[#5b23a6] rounded-[32px] p-5 sm:p-8 shadow">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-              {Penny ? (
+        {/* PET NANNY */}
+        <motion.section
+          id="pet-nanny-banner"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-16"
+        >
+          <div
+            className="
+      relative
+      overflow-hidden
+      bg-[#5A189A]
+      rounded-[32px]
+      px-6
+      py-8
+      md:px-8
+      lg:px-12
+      lg:py-10
+      shadow-xl
+    "
+          >
+            {/* Decoración */}
+            <div
+              className="
+        absolute
+        -top-20
+        -right-20
+        w-60
+        h-60
+        rounded-full
+        bg-white/5
+      "
+            />
+
+            <div
+              className="
+        relative
+        grid
+        grid-cols-1
+        lg:grid-cols-12
+        gap-8
+        items-center
+      "
+            >
+              {/* CONTENIDO */}
+              <div
+                id="pet-nanny-content"
+                className="lg:col-span-7 text-center lg:text-left"
+              >
+                {/* Logo */}
                 <img
+                  id="logo-pet-nanny"
                   src={Penny}
                   alt="Pet Nanny"
-                  className="h-14 sm:h-16 md:h-20 w-auto"
+                  className="
+            h-16
+            md:h-20
+            w-auto
+            mx-auto
+            lg:mx-0
+            mb-5
+          "
                 />
-              ) : (
-                <span className="text-white font-semibold">Pet Nanny</span>
-              )}
 
+                {/* Título */}
+                <h3
+                  id="pet-nanny-title"
+                  className="
+            text-white
+            font-bold
+            text-2xl
+            md:text-3xl
+            mb-4
+          "
+                >
+                  Tu mascota nunca viaja sola
+                </h3>
 
-              <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-white rounded-2xl shadow p-4">
-                  <p className="font-bold text-[#2a1154] text-sm">Fecha: 08/04/2025</p>
-                  <p className="text-[#2a1154] text-sm">Destino: <span className="font-bold">Colombia</span></p>
-                  <p className="text-[#2a1154] text-sm">Origen: <span className="font-bold">Europa</span></p>
-                  <p className="text-[#2a1154] text-sm">ingreso por <span className="font-bold">Madrid</span></p>
+                {/* Descripción */}
+                <p
+                  id="pet-nanny-description"
+                  className="
+            text-white/90
+            text-sm
+            md:text-base
+            leading-relaxed
+            max-w-2xl
+            mx-auto
+            lg:mx-0
+            mb-6
+          "
+                >
+                  Nuestro servicio Pet Nanny acompaña a tu mascota
+                  durante todo el proceso de viaje, brindando apoyo,
+                  seguimiento y atención personalizada para una
+                  experiencia segura y tranquila.
+                </p>
+
+                {/* Beneficios */}
+                <div
+                  id="pet-nanny-benefits"
+                  className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            gap-3
+            mb-6
+          "
+                >
+                  <div className="flex items-center gap-2 text-white">
+                    <span>✓</span>
+                    <span>Atención personalizada</span>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-white">
+                    <span>✓</span>
+                    <span>Seguimiento continuo</span>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-white">
+                    <span>✓</span>
+                    <span>Acompañamiento durante el viaje</span>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-white">
+                    <span>✓</span>
+                    <span>Mayor tranquilidad para tu familia</span>
+                  </div>
                 </div>
-                <div className="bg-white rounded-2xl shadow p-4">
-                  <p className="font-bold text-[#2a1154] text-sm">Fecha: 08/04/2025</p>
-                  <p className="text-[#2a1154] text-sm">Destino: <span className="font-bold">Colombia</span></p>
-                  <p className="text-[#2a1154] text-sm">Origen: <span className="font-bold">Europa</span></p>
-                  <p className="text-[#2a1154] text-sm">ingreso por <span className="font-bold">Madrid</span></p>
-                </div>
+
+                {/* CTA */}
+                <button
+                  id="pet-nanny-button"
+                  className="
+            bg-white
+            text-[#5A189A]
+            font-bold
+            px-6
+            py-3
+            rounded-full
+            transition-all
+            duration-300
+            hover:scale-105
+            hover:shadow-lg
+          "
+                >
+                  Solicitar información
+                </button>
+              </div>
+
+              {/* ILUSTRACIÓN */}
+              <div
+                id="pet-nanny-image-container"
+                className="
+          lg:col-span-5
+          flex
+          justify-center
+        "
+              >
+                <img
+                  id="pet-nanny-svg"
+                  src={PetNannySvg}
+                  alt="Mascota viajera"
+                  className="
+            h-52
+            sm:h-60
+            md:h-72
+            lg:h-80
+            xl:h-96
+            w-auto
+            object-contain
+            drop-shadow-2xl
+          "
+                />
               </div>
             </div>
           </div>
-        </div>
-
+        </motion.section>
       </div>
     </section>
   );
 }
-
-
-
-
-
-
-/* import React from "react";
-/* import mapaCol from "../../assets/mapa-colombia.png"; // tu imagen 
-import mapaColomSVG from 
-import ColombiaMap from "./components/ColombiaMap";
-const Pill = ({ children }) => (
-  <div className="w-full rounded-full bg-[#6B21A8] text-white text-center text-sm sm:text-base font-bold py-2.5 shadow">
-    {children}
-  </div>
-);
-
-const CITIES = [
-  ["Bogotá", "Medellín", "Cali", "Barranquilla"],
-  ["Bucaramanga", "Pereira", "Manizales", "Armenia"],
-  ["Cartagena", "Cúcuta", "Ibagué", "Neiva"],
-];
-
-export default function SeccionRazonesColombia({ mapa = mapaCol }) {
-  return (
-    <section className="w-full my-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="text-[#2a1154] font-extrabold mb-4">¿Por qué elegir <span className="text-[#6B21A8]">Mapapets</span>?</p>
-
-        <div className="space-y-3">
-          <Pill>+1000 mascotas viajeras felices</Pill>
-          <Pill>Trámites rápidos, seguros y sin estrés</Pill>
-          <Pill>Atención personalizada, como si fuera nuestro propio peludo</Pill>
-        </div>
-
-        <div className="mt-8 grid grid-cols-12 gap-6">
-          {/* Mapa}
-          <div className="col-span-12 md:col-span-5">
-            <div className="rounded-2xl bg-white ring-1 ring-black/5 p-4 shadow">
-              <img src={mapa} alt="Mapa de Colombia" className="w-full h-auto object-contain" />
-            </div>
-          </div>
-
-          {/* Ciudades }
-          <div className="col-span-12 md:col-span-7 flex flex-col justify-center">
-            <h4 className="font-extrabold text-[#2a1154] mb-3">
-              Llegamos a <span className="text-[#6B21A8]">toda Colombia</span>
-            </h4>
-            <div className="rounded-2xl bg-white ring-1 ring-black/5 p-4 shadow">
-              <div className="grid grid-cols-3 gap-4 text-sm text-[#2a1154]/80">
-               <div className="flex items-center justify-center">
-      {/* tamaño como tu referencia (mini) }
-      <ColombiaMap width={120} height={150} />
-    </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
- */
-
-
