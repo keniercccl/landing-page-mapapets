@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const PhotoCard = ({ photo, isMobile }) => {
+const PhotoCard = ({ photo, isMobile, onClick }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -23,42 +23,41 @@ const PhotoCard = ({ photo, isMobile }) => {
         <img
           src={photo.image}
           alt={photo.title}
+          onClick={onClick}
           loading="lazy"
-          className={`
-            w-full
-            object-cover
-            ${isMobile
-              ? "aspect-[4/5]"
-              : "aspect-[16/9]"
-            }
+          className={`w-full object-cover cursor-pointer transition hover:scale-[1.02]
+            ${isMobile ? "aspect-[4/5]" : "aspect-[16/9]"}
           `}
         />
 
         {/* OVERLAY */}
 
         <div
+          onClick={onClick}
           className="
-            absolute
-            inset-0
-            bg-gradient-to-t
-            from-black/80
-            via-black/20
-            to-transparent
-          "
+              absolute
+              inset-0
+              bg-gradient-to-t
+              from-black/80
+              via-black/20
+              to-transparent
+              pointer-events-none
+            "
         />
 
         {/* TEXTO */}
 
         <div
           className="
-            absolute
-            bottom-0
-            left-0
-            right-0
-            p-4
-            md:p-6
-            text-white
-          "
+    absolute
+    bottom-0
+    left-0
+    right-0
+    p-4
+    md:p-6
+    text-white
+    pointer-events-none
+  "
         >
           <h3
             className="

@@ -6,6 +6,9 @@ import { Navigation } from "swiper/modules";
 import { Pagination } from "swiper/modules";
 import { Thumbs } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -21,12 +24,25 @@ const PhotoCarousel = ({
   const [thumbsSwiper, setThumbsSwiper] =
     useState(null);
 
+  const [lightboxOpen, setLightboxOpen] =
+    useState(false);
+
+  const [currentIndex, setCurrentIndex] =
+    useState(0);
+
   if (!photos.length) {
     return null;
   }
 
+  const slides = photos.map((photo) => ({
+    src: photo.image,
+    title: photo.title,
+    description: photo.description,
+  }));
+
   return (
     <div className="w-full">
+
 
       {/* =======================================
           MOBILE
@@ -43,6 +59,7 @@ const PhotoCarousel = ({
           }}
           autoplay={{
             delay: 5000,
+            disableOnInteraction: false,
           }}
           modules={[
             Navigation,
@@ -51,11 +68,16 @@ const PhotoCarousel = ({
           ]}
           className="w-full"
         >
-          {photos.map((photo) => (
+          {photos.map((photo, index) => (
             <SwiperSlide key={photo.id}>
               <PhotoCard
                 photo={photo}
                 isMobile={true}
+                onClick={() => {
+                  console.log("CLICK FOTO");
+                  setCurrentIndex(index);
+                  setLightboxOpen(true);
+                }}
               />
             </SwiperSlide>
           ))}
@@ -78,6 +100,8 @@ const PhotoCarousel = ({
             }}
             autoplay={{
               delay: 6000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
             }}
             modules={[
               Navigation,
@@ -86,11 +110,16 @@ const PhotoCarousel = ({
             ]}
             className="mb-4"
           >
-            {photos.map((photo) => (
+            {photos.map((photo, index) => (
               <SwiperSlide key={photo.id}>
                 <PhotoCard
                   photo={photo}
                   isMobile={false}
+                  onClick={() => {
+                    console.log("CLICK FOTO");
+                    setCurrentIndex(index);
+                    setLightboxOpen(true);
+                  }}
                 />
               </SwiperSlide>
             ))}
@@ -107,7 +136,7 @@ const PhotoCarousel = ({
             watchSlidesProgress
             modules={[Thumbs]}
           >
-            {photos.map((photo) => (
+            {photos.map((photo, index) => (
               <SwiperSlide key={photo.id}>
                 <img
                   src={photo.image}
@@ -126,6 +155,12 @@ const PhotoCarousel = ({
           </Swiper>
         </>
       )}
+      <Lightbox
+        open={lightboxOpen}
+        close={() => setLightboxOpen(false)}
+        slides={slides}
+        index={currentIndex}
+      />
     </div>
   );
 };

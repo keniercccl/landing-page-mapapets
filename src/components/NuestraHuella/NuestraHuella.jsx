@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import { useFlickrPhotos } from "../../hooks/useFlickrPhotos";
-
+import SkeletonCarousel from "./SkeletonCarousel";
 import PhotoCarousel from "./PhotoCarousel";
 import StatsSection from "./StatsSection";
 
@@ -81,21 +81,7 @@ const NuestraHuella = () => {
             ESTADO DE CARGA
         ===================================== */}
 
-        {loading && (
-          <div
-            className="
-              text-center
-              py-20
-            "
-          >
-            <div
-              className="
-                spinner-border
-                text-primary
-              "
-            />
-          </div>
-        )}
+        {loading && <SkeletonCarousel isMobile={isMobile} />}
 
         {/* =====================================
             ERROR
