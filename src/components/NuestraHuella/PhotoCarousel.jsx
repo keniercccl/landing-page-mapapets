@@ -37,7 +37,7 @@ const PhotoCarousel = ({
   const slides = photos.map((photo) => ({
     src: photo.image,
     title: photo.title,
-    description: photo.description,
+    description: photo.description || "",
   }));
 
   return (
@@ -74,9 +74,9 @@ const PhotoCarousel = ({
                 photo={photo}
                 isMobile={true}
                 onClick={() => {
-                  console.log("CLICK FOTO");
                   setCurrentIndex(index);
                   setLightboxOpen(true);
+                  console.log("ABRIENDO LIGHTBOX");
                 }}
               />
             </SwiperSlide>
@@ -116,9 +116,9 @@ const PhotoCarousel = ({
                   photo={photo}
                   isMobile={false}
                   onClick={() => {
-                    console.log("CLICK FOTO");
                     setCurrentIndex(index);
                     setLightboxOpen(true);
+                    console.log("ABRIENDO LIGHTBOX");
                   }}
                 />
               </SwiperSlide>
@@ -160,6 +160,19 @@ const PhotoCarousel = ({
         close={() => setLightboxOpen(false)}
         slides={slides}
         index={currentIndex}
+        plugins={[Zoom]}
+
+        zoom={{
+          maxZoomPixelRatio: 4,
+          zoomInMultiplier: 2,
+          doubleTapDelay: 300,
+          doubleClickDelay: 300,
+          doubleClickMaxStops: 2,
+          keyboardMoveDistance: 50,
+          wheelZoomDistanceFactor: 100,
+          pinchZoomDistanceFactor: 100,
+          scrollToZoom: true,
+        }}
       />
     </div>
   );
