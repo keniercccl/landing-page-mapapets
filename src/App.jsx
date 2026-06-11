@@ -10,6 +10,7 @@ import SeccionMensaje from "./components/Servicios/SeccionMensaje";
 import Footer from "./components/Footer/Footer";
 import bgServicios from "./assets/1700x630.jpg";
 import BotonWhatsApp from "./components/BotonWhatsApp";
+import NuestraHuella from "./components/NuestraHuella/NuestraHuella.jsx"
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
       <div className="h-2 sm:h-4" />
 
       <Servicios bgImage={bgServicios} />
+      <NuestraHuella />
       <SeccionMensaje />
       <SeccionDestinosCTA whatsappHref="https://wa.me/3203446611" />
       <SeccionRazonesColombia />
