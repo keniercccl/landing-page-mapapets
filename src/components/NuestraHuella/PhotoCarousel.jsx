@@ -21,6 +21,13 @@ const PhotoCarousel = ({
   photos,
   isMobile,
 }) => {
+  console.log(
+    "PhotoCarousel",
+    {
+      isMobile,
+      photos: photos.length,
+    }
+  );
   const [thumbsSwiper, setThumbsSwiper] =
     useState(null);
 
@@ -50,7 +57,14 @@ const PhotoCarousel = ({
 
       {isMobile ? (
         <Swiper
-          direction="vertical"
+          direction="horizontal"
+          onSwiper={(swiper) => {
+            console.log(
+              "SWIPER MOBILE",
+              swiper.width,
+              swiper.height
+            );
+          }}
           slidesPerView={1}
           spaceBetween={20}
           navigation
@@ -66,7 +80,8 @@ const PhotoCarousel = ({
             Pagination,
             Autoplay,
           ]}
-          className="w-full"
+          className="w-full
+  h-[650px]"
         >
           {photos.map((photo, index) => (
             <SwiperSlide key={photo.id}>

@@ -6,6 +6,7 @@ import { useFlickrPhotos } from "../../hooks/useFlickrPhotos";
 import SkeletonCarousel from "./SkeletonCarousel";
 import PhotoCarousel from "./PhotoCarousel";
 import StatsSection from "./StatsSection";
+import WhatsappButton from "../WhatsappSelector/WhatsappButton";
 
 const NuestraHuella = () => {
   const {
@@ -24,7 +25,13 @@ const NuestraHuella = () => {
         px-4
       "
     >
-      <div className="container mx-auto">
+      <div
+  className="
+    container
+    mx-auto
+    overflow-hidden
+  "
+>
 
         {/* =====================================
             ENCABEZADO
@@ -166,7 +173,21 @@ const NuestraHuella = () => {
             segura junto a su familia.
           </p>
 
-          <a
+          <WhatsappButton
+  className="
+    bg-[#5B21B6]
+    text-white
+    px-8
+    py-4
+    rounded-2xl
+    hover:scale-105
+    transition
+  "
+>
+  Hablar con un asesor
+</WhatsappButton>
+
+          {/* <a
             href="https://wa.me/573203446611"
             target="_blank"
             rel="noopener noreferrer"
@@ -185,7 +206,7 @@ const NuestraHuella = () => {
             "
           >
             Solicitar asesoría
-          </a>
+          </a> */}
         </motion.div>
 
       </div>

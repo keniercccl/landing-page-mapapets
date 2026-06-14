@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import bgServicios from "./assets/1700x630.jpg";
 import BotonWhatsApp from "./components/BotonWhatsApp";
 import NuestraHuella from "./components/NuestraHuella/NuestraHuella.jsx"
+import SeccionDestinos from "./components/Destinos/SeccionDestinos.jsx";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
 
       <Servicios bgImage={bgServicios} />
       <NuestraHuella />
+      <SeccionDestinos />
       <SeccionMensaje />
       <SeccionRazonesColombia />
       <SeccionAsesoriaCTA />
