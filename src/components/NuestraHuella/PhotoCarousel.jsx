@@ -84,7 +84,10 @@ const PhotoCarousel = ({
   h-[650px]"
         >
           {photos.map((photo, index) => (
-            <SwiperSlide key={photo.id}>
+            <SwiperSlide
+  key={photo.id}
+  className="!w-full"
+>
               <PhotoCard
                 photo={photo}
                 isMobile={true}
@@ -126,7 +129,10 @@ const PhotoCarousel = ({
             className="mb-4"
           >
             {photos.map((photo, index) => (
-              <SwiperSlide key={photo.id}>
+              <SwiperSlide
+  key={photo.id}
+  className="!w-full"
+>
                 <PhotoCard
                   photo={photo}
                   isMobile={false}
@@ -152,7 +158,10 @@ const PhotoCarousel = ({
             modules={[Thumbs]}
           >
             {photos.map((photo, index) => (
-              <SwiperSlide key={photo.id}>
+              <SwiperSlide
+  key={photo.id}
+  className="!w-full"
+>
                 <img
                   src={photo.image}
                   alt={photo.title}

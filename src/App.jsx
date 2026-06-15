@@ -50,7 +50,7 @@ function App() {
       <Servicios bgImage={bgServicios} />
       <NuestraHuella />
       <SeccionDestinos />
-      <SeccionMensaje />
+      <SeccionMensaje />  
       <SeccionRazonesColombia />
       <SeccionAsesoriaCTA />
       <SeccionEquipo />

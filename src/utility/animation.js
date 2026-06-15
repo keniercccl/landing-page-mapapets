@@ -49,13 +49,13 @@ export const fadeUp = {
 export const slideLeft = {
   hidden: {
     opacity: 0,
-    x: -80,
+    x: -20,
   },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.6,
     },
   },
 };
@@ -63,13 +63,13 @@ export const slideLeft = {
 export const slideRight = {
   hidden: {
     opacity: 0,
-    x: 80,
+    x: 20,
   },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.6,
     },
   },
 };

@@ -4,7 +4,6 @@ import CountUp from "react-countup";
 import WhatsappButton from "../WhatsappSelector/WhatsappButton";
 
 import {
-  fadeUp,
   slideLeft,
   slideRight,
 } from "../../utility/animation";
