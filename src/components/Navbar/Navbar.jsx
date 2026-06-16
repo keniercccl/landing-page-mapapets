@@ -56,8 +56,8 @@ border-black/5
     items-center
     justify-between
 
-    border-4
-    border-red-500
+    border-1
+
   "
 >
           {/* LOGO */}
