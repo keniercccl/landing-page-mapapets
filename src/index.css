@@ -13,3 +13,7 @@ body {
   font-family: 'Poppins', sans-serif;
   /* o la que uses */
 }
+
+html {
+  scroll-behavior: smooth;
+}

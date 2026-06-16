@@ -5,6 +5,8 @@ import EstatuaImg from "../../assets/estatua_libertad_1.jpg";
 import PerroImg from "../../assets/banner-perro.png";
 import LogoImg from "../../assets/logo_nuevo_1.png";
 
+import WhatsappButton from "../WhatsappSelector/WhatsappButton";
+
 import {
   fadeUp,
   slideLeft,
@@ -14,42 +16,34 @@ import {
 const Banner = () => {
   return (
     <section
-      id="huella"
-      className="w-full px-4 my-8 sm:my-12"
+      id="banner-internacional"
+      className="
+        w-full
+        px-4
+        my-8
+        sm:my-12
+      "
     >
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.2 }}
         className="
           relative
           overflow-hidden
-          rounded-[28px]
-          lg:rounded-[40px]
-          min-h-[700px]
-          lg:min-h-[550px]
-          shadow-xl
+          rounded-[32px]
+          lg:rounded-[48px]
+          min-h-[620px]
+          lg:min-h-[560px]
+          shadow-2xl
         "
       >
-        {/* ==================================================
-            CAPA 1 - IMAGEN DE FONDO
-            ==================================================
-
-            CAMBIAR ALTURA:
-            min-h-[700px]
-            lg:min-h-[550px]
-
-            CAMBIAR OPACIDAD:
-            opacity-100
-
-            CAMBIAR ESCALA:
-            scale-100
-        ================================================== */}
+        {/* Fondo */}
 
         <motion.img
           variants={fadeUp}
           src={EstatuaImg}
-          alt="Estatua de la Libertad"
+          alt="Destino internacional"
           className="
             absolute
             inset-0
@@ -59,142 +53,170 @@ const Banner = () => {
           "
         />
 
-        {/* ==================================================
-            CAPA 2 - OVERLAY MORADO
+        {/* Overlay */}
 
-            CAMBIAR TRANSPARENCIA:
-
-            from-[#5B21B6]
-            via-[#5B21B6]/95
-            to-transparent
-
-            Más transparente:
-            via-[#5B21B6]/70
-
-            Más oscuro:
-            via-[#5B21B6]
-        ================================================== */}
-
-        <motion.div
-          variants={fadeUp}
+        <div
           className="
             absolute
             inset-0
             bg-gradient-to-l
-            from-[#5B21B6]
-            via-[#5B21B6]/95
-            to-transparent
+            from-[#2B145A]/95
+            via-[#5B21B6]/90
+            to-[#5B21B6]/55
           "
         />
 
-        {/* ==================================================
-            CONTENIDO
-        ================================================== */}
+        {/* Contenido */}
 
         <div
           className="
             relative
             z-20
             h-full
+
             grid
             grid-cols-1
             lg:grid-cols-2
-            items-center
+
+            gap-10
+
             px-6
             sm:px-10
             lg:px-16
-            py-10
+
+            py-12
           "
         >
-          {/* ==========================================
-              COLUMNA IZQUIERDA
-          ========================================== */}
+          {/* IZQUIERDA */}
 
-          <div
+          <motion.div
+            variants={slideLeft}
             className="
               flex
               flex-col
               justify-center
-              items-center
-              lg:items-start
+
               text-center
               lg:text-left
-              gap-4
             "
           >
-            <motion.div variants={slideLeft}>
-              <h2
-                className="
-                  text-white
-                  font-black
-                  text-4xl
-                  sm:text-5xl
-                  lg:text-6xl
-                  leading-none
-                "
-              >
-                Estados
-              </h2>
+            <div
+              className="
+                inline-flex
+                self-center
+                lg:self-start
 
-              <h3
-                className="
-                  text-white
-                  font-black
-                  text-5xl
-                  sm:text-6xl
-                  lg:text-7xl
-                  leading-none
-                "
-              >
-                Unidos
-              </h3>
+                px-4
+                py-2
 
-              <p
-                className="
-                  text-white
-                  text-lg
-                  sm:text-xl
-                  mt-3
-                "
-              >
-                o cualquier parte del mundo
-              </p>
-            </motion.div>
-          </div>
+                rounded-full
 
-          {/* ==========================================
-              COLUMNA DERECHA
-          ========================================== */}
+                bg-white/15
+                backdrop-blur
 
-          <div
+                text-white
+                font-semibold
+                text-sm
+              "
+            >
+              🌎 Transporte internacional de mascotas
+            </div>
+
+            <h2
+              className="
+                mt-6
+
+                text-white
+                font-black
+
+                text-4xl
+                sm:text-5xl
+                lg:text-6xl
+
+                leading-none
+              "
+            >
+              Conectamos familias y mascotas
+            </h2>
+
+            <h3
+              className="
+                mt-2
+
+                text-[#C4FF3B]
+                font-black
+
+                text-4xl
+                sm:text-5xl
+                lg:text-6xl
+
+                leading-none
+              "
+            >
+              en cualquier parte del mundo
+            </h3>
+
+            <p
+              className="
+                mt-6
+
+                text-white/95
+
+                text-lg
+                md:text-xl
+
+                max-w-xl
+              "
+            >
+              Gestionamos documentación,
+              coordinación internacional,
+              requisitos sanitarios y logística
+              para que tu mascota viaje segura
+              junto a su familia.
+            </p>
+
+            <div
+              className="
+                mt-8
+
+                flex
+                flex-wrap
+
+                gap-3
+
+                justify-center
+                lg:justify-start
+              "
+            >
+              <span className="bg-white/15 backdrop-blur text-white px-4 py-2 rounded-full">
+                ✈️ Vuelos internacionales
+              </span>
+
+              <span className="bg-white/15 backdrop-blur text-white px-4 py-2 rounded-full">
+                📄 Gestión documental
+              </span>
+
+              <span className="bg-white/15 backdrop-blur text-white px-4 py-2 rounded-full">
+                🐶 Acompañamiento experto
+              </span>
+            </div>
+          </motion.div>
+
+          {/* DERECHA */}
+
+          <motion.div
+            variants={slideRight}
             className="
               flex
               flex-col
               items-center
               lg:items-end
               justify-center
-              gap-6
-              mt-10
-              lg:mt-0
             "
           >
-            {/* ======================================
-                LOGO
-
-                CAMBIAR TAMAÑO:
-
-                w-32
-                sm:w-40
-                lg:w-52
-
-                Más grande desktop:
-                lg:w-64
-            ====================================== */}
-
-            <motion.img
-              variants={fadeUp}
+            <img
               src={LogoImg}
-              alt="MAPAPETS"
+              alt="Mapapets"
               className="
                 w-32
                 sm:w-40
@@ -203,139 +225,51 @@ const Banner = () => {
               "
             />
 
-            {/* ======================================
-                SLOGAN
-            ====================================== */}
-
-            <motion.div
-              variants={fadeUp}
+            <p
               className="
+                mt-4
+
+                text-white
                 text-center
                 lg:text-right
-                text-white
-                font-semibold
+
                 text-lg
                 sm:text-xl
+
                 max-w-md
               "
             >
-              ¡Nos encargamos de todo para tu viaje con tu mascota!
-            </motion.div>
+              Más que un traslado,
+              ayudamos a mantener unidas
+              a las familias.
+            </p>
 
-            {/* ======================================
-                BOTONES DE CONTACTO
-            ====================================== */}
-
-            <div
-              className="
-                flex
-                flex-col
-                sm:flex-row
-                gap-4
-                w-full
-                justify-center
-                lg:justify-end
-              "
-            >
-              {/* UBICACIÓN */}
-
-              <motion.a
-                variants={slideRight}
-                href="https://maps.google.com/?q=Cl.115%20%2352-43%20Bogota"
-                target="_blank"
-                rel="noopener noreferrer"
+            <div className="mt-8">
+              <WhatsappButton
                 className="
-                  bg-white
+                  bg-[#C4FF3B]
+                  text-[#2B145A]
+
+                  px-8
+                  py-4
+
                   rounded-2xl
-                  p-4
-                  min-w-[240px]
+
+                  font-bold
+
+                  shadow-xl
+
                   hover:scale-105
                   transition
                 "
               >
-                <div className="flex gap-3 items-start">
-                  <i className="bi bi-geo-alt-fill text-[#5B21B6] text-2xl"></i>
-
-                  <div>
-                    <p className="text-xs text-gray-500">
-                      Visítanos
-                    </p>
-
-                    <p className="font-semibold text-gray-800">
-                      Cl. 115 #52-43
-                    </p>
-
-                    <p className="text-gray-600">
-                      Bogotá
-                    </p>
-                  </div>
-                </div>
-              </motion.a>
-
-              {/* WHATSAPP */}
-
-              <motion.a
-                variants={slideRight}
-                href="https://wa.me/573203446611"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                  bg-white
-                  rounded-2xl
-                  p-4
-                  min-w-[240px]
-                  hover:scale-105
-                  transition
-                "
-              >
-                <div className="flex gap-3 items-start">
-                  <i className="bi bi-whatsapp text-[#5B21B6] text-2xl"></i>
-
-                  <div>
-                    <p className="text-xs text-gray-500">
-                      Más información
-                    </p>
-
-                    <p className="font-semibold text-gray-800">
-                      320 344 6611
-                    </p>
-
-                    <p className="font-semibold text-gray-800">
-                      321 325 1713
-                    </p>
-                  </div>
-                </div>
-              </motion.a>
+                Solicitar asesoría
+              </WhatsappButton>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        {/* ==================================================
-            PERRO (ÚLTIMO ELEMENTO)
-
-            CAMBIAR TAMAÑO:
-
-            w-[260px]
-            sm:w-[350px]
-            lg:w-[500px]
-
-            CAMBIAR POSICIÓN:
-
-            bottom-0
-            left-1/2
-
-            MÁS A LA DERECHA:
-            lg:left-[42%]
-
-            MÁS A LA IZQUIERDA:
-            lg:left-[58%]
-
-            MÁS ARRIBA:
-            lg:bottom-[20px]
-
-            MÁS ABAJO:
-            lg:bottom-[-20px]
-        ================================================== */}
+        {/* Mascota */}
 
         <motion.img
           variants={fadeUp}
@@ -343,15 +277,16 @@ const Banner = () => {
           alt="Mascota feliz"
           className="
             absolute
+
             bottom-0
             left-1/2
             -translate-x-1/2
-            lg:left-[22%]
-            lg:bottom-[-20px]
 
-            w-[160px]
-            sm:w-[250px]
-            lg:left-[28%]
+            lg:left-[30%]
+
+            w-[170px]
+            sm:w-[240px]
+            lg:w-[320px]
 
             z-30
             pointer-events-none
