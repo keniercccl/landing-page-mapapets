@@ -17,7 +17,7 @@ import "swiper/css/navigation";
 import ServiceCard from "./ServiceCard";
 import ServiceModal from "./ServiceModal";
 
-import { SERVICES } from "../Servicios/data/servicesData";
+import { SERVICES } from "../../data/servicesData";
 
 const ServicesCoverflow = () => {
   const [selectedService, setSelectedService] =

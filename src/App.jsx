@@ -4,7 +4,7 @@ import Banner from "./components/Banner/Banner";
 import Servicios from "./components/Servicios/ServiciosSection";
 import SeccionAsesoriaCTA from "./components/Servicios/SeccionAsesoriaCTA";
 import SeccionRazonesColombia from "./components/Servicios/SeccionRazonesColombia";
-import SeccionEquipo from "./components/Servicios/SeccionEquipo";
+import SeccionEquipo from "./components/Equipo/SeccionEquipo.jsx";
 import SeccionMensaje from "./components/Servicios/SeccionMensaje";
 import Footer from "./components/Footer/Footer";
 import bgServicios from "./assets/1700x630.jpg";

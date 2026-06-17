@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { id: 1, title: "Inicio", href: "#inicio" },
   { id: 2, title: "Servicios", href: "#servicios" },
   { id: 3, title: "Nuestra huella", href: "#nuestra-huella" },
-  { id: 4, title: "Contacto", href: "#contacto" },
+  { id: 4, title: "Equipo", href: "#equipo" },
 ];
 
 const NAV_REDES = [
