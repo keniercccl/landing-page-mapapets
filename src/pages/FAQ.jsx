@@ -5,6 +5,7 @@ import FAQCategory from "../components/FAQ/FAQCategory";
 export default function FAQ() {
   return (
     <main
+    id="faq"
       className="
         min-h-screen
         bg-[#FAF8FF]
