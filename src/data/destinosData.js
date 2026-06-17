@@ -1,17 +1,17 @@
-import ArgentinaFlag from "../../assets/flags/ar.svg";
-import UsaFlag from "../../assets/flags/us.svg";
-import SpainFlag from "../../assets/flags/es.svg";
-import FranceFlag from "../../assets/flags/fr.svg";
-import ItalyFlag from "../../assets/flags/it.svg";
-import GermanyFlag from "../../assets/flags/de.svg";
-import ChileFlag from "../../assets/flags/cl.svg";
-import MexicoFlag from "../../assets/flags/mx.svg";
-import DominicanaFlag from "../../assets/flags/do.svg";
-import CanadaFlag from "../../assets/flags/ca.svg";
+import ArgentinaFlag from "../assets/flags/ar.svg";
+import UsaFlag from "../assets/flags/us.svg";
+import SpainFlag from "../assets/flags/es.svg";
+import FranceFlag from "../assets/flags/fr.svg";
+import ItalyFlag from "../assets/flags/it.svg";
+import GermanyFlag from "../assets/flags/de.svg";
+import ChileFlag from "../assets/flags/cl.svg";
+import MexicoFlag from "../assets/flags/mx.svg";
+import DominicanaFlag from "../assets/flags/do.svg";
+import CanadaFlag from "../assets/flags/ca.svg";
 
 
 
-export const destinos = [
+const destinos = [
   {
     id: 1,
     flag: UsaFlag,
@@ -92,3 +92,5 @@ export const destinos = [
       "Viajes seguros y asesorados para mascotas y sus familias.",
   },
 ];
+
+export default destinos;

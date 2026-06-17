@@ -21,13 +21,13 @@ const PhotoCarousel = ({
   photos,
   isMobile,
 }) => {
-  console.log(
-    "PhotoCarousel",
-    {
-      isMobile,
-      photos: photos.length,
-    }
-  );
+  // console.log(
+  //   "PhotoCarousel",
+  //   {
+  //     isMobile,
+  //     photos: photos.length,
+  //   }
+  // );
   const [thumbsSwiper, setThumbsSwiper] =
     useState(null);
 
@@ -59,11 +59,11 @@ const PhotoCarousel = ({
         <Swiper
           direction="horizontal"
           onSwiper={(swiper) => {
-            console.log(
-              "SWIPER MOBILE",
-              swiper.width,
-              swiper.height
-            );
+            // console.log(
+            //   "SWIPER MOBILE",
+            //   swiper.width,
+            //   swiper.height
+            // );
           }}
           slidesPerView={1}
           spaceBetween={20}
@@ -94,7 +94,7 @@ const PhotoCarousel = ({
                 onClick={() => {
                   setCurrentIndex(index);
                   setLightboxOpen(true);
-                  console.log("ABRIENDO LIGHTBOX");
+                  // console.log("ABRIENDO LIGHTBOX");
                 }}
               />
             </SwiperSlide>
@@ -139,7 +139,7 @@ const PhotoCarousel = ({
                   onClick={() => {
                     setCurrentIndex(index);
                     setLightboxOpen(true);
-                    console.log("ABRIENDO LIGHTBOX");
+                    // console.log("ABRIENDO LIGHTBOX");
                   }}
                 />
               </SwiperSlide>

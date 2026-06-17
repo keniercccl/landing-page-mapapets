@@ -2,12 +2,10 @@ import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Banner from "./components/Banner/Banner";
 import Servicios from "./components/Servicios/ServiciosSection";
-import SeccionAsesoriaCTA from "./components/Servicios/SeccionAsesoriaCTA";
 import SeccionRazonesColombia from "./components/Servicios/SeccionRazonesColombia";
 import SeccionEquipo from "./components/Equipo/SeccionEquipo.jsx";
 import SeccionMensaje from "./components/Servicios/SeccionMensaje";
 import Footer from "./components/Footer/Footer";
-import bgServicios from "./assets/1700x630.jpg";
 import BotonWhatsApp from "./components/BotonWhatsApp";
 import NuestraHuella from "./components/NuestraHuella/NuestraHuella.jsx"
 import SeccionDestinos from "./components/Destinos/SeccionDestinos.jsx";
@@ -47,12 +45,11 @@ function App() {
 
       <div className="h-2 sm:h-4" />
 
-      <Servicios bgImage={bgServicios} />
+      <Servicios />
       <NuestraHuella />
       <SeccionDestinos />
       <SeccionMensaje />  
       <SeccionRazonesColombia />
-      <SeccionAsesoriaCTA />
       <SeccionEquipo />
       <Footer />
       {/*    <SeccionPetNanny />

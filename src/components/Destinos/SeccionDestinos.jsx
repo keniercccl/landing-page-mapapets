@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import { fadeUp } from "../../utility/animation";
 
-import { destinos } from "./destinosData";
+import destinos from "../../data/destinosData";
 
 const SeccionDestinos = () => {
   return (
