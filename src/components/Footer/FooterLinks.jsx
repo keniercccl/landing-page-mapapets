@@ -30,7 +30,7 @@ const legalLinks = [
   },
   {
     label: "Política de Privacidad",
-    href: "/politica-privacidad",
+    href: "/landing-page-mapapets/politica-privacidad",
   },
   {
     label: "Términos y Condiciones",

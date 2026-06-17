@@ -1,61 +1,27 @@
-import Hero from "./components/Hero/Hero";
-import Navbar from "./components/Navbar/Navbar";
-import Banner from "./components/Banner/Banner";
-import Servicios from "./components/Servicios/ServiciosSection";
-import SeccionRazonesColombia from "./components/Servicios/SeccionRazonesColombia";
-import SeccionEquipo from "./components/Equipo/SeccionEquipo.jsx";
-import SeccionMensaje from "./components/Servicios/SeccionMensaje";
-import Footer from "./components/Footer/Footer";
-import BotonWhatsApp from "./components/BotonWhatsApp";
-import NuestraHuella from "./components/NuestraHuella/NuestraHuella.jsx"
-import SeccionDestinos from "./components/Destinos/SeccionDestinos.jsx";
+// src/App.jsx
+import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* HERO: padding-top para compensar el navbar fijo */}
-      <div
-        id="inicio"
-        className="
-          w-full
-          bg-[#F6EEFF]
-          pt-16 sm:pt-20                 /* 👈 NUEVO: altura del navbar */
-          min-h-[70vh] sm:min-h-[80vh] md:min-h-screen
-          rounded-t-none
-          rounded-b-[72px] sm:rounded-b-[120px] md:rounded-b-[180px]
-          overflow-hidden
-          flex flex-col
-        "
-      >
-        <Navbar />
-        <Hero />
-        <BotonWhatsApp />
-      </div>
-
-      <div className="h-2 sm:h-4" />  {/* separador pequeño */}
-
-      {/* Si tu Banner acepta className, dale la misma altura/curva que el Hero */}
-      <Banner
-        className="
-          min-h-[70vh] sm:min-h-[80vh] md:min-h-screen
-          rounded-t-none
-          rounded-b-[72px] sm:rounded-b-[120px] md:rounded-b-[180px]
-        "
-      />
-
-      <div className="h-2 sm:h-4" />
-
-      <Servicios />
-      <NuestraHuella />
-      <SeccionDestinos />
-      <SeccionMensaje />  
-      <SeccionRazonesColombia />
-      <SeccionEquipo />
-      <Footer />
-      {/*    <SeccionPetNanny />
-      <SeccionAsesoriaCTA href="#contacto" /> */}
-      <div className="h-10 sm:h-12" />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/landing-page-mapapets"
+          element={<Home />}
+        />
+        <Route
+  path="/landing-page-mapapets/politica-privacidad"
+  element={<PoliticaPrivacidad />}
+/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
