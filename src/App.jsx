@@ -1,5 +1,6 @@
 // src/App.jsx
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
+import TerminosCondiciones from "./pages/TerminosCondiciones";
 import {
   HashRouter,
   Routes,
@@ -17,9 +18,13 @@ function App() {
           element={<Home />}
         />
         <Route
-  path="/politica-privacidad"
-  element={<PoliticaPrivacidad />}
-/>
+          path="/politica-privacidad"
+          element={<PoliticaPrivacidad />}
+        />
+        <Route
+          path="/terminos-condiciones"
+          element={<TerminosCondiciones />}
+        />
       </Routes>
     </HashRouter>
   );
