@@ -2,25 +2,15 @@
 
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
-
 import Banner from "../components/Banner/Banner";
-
 import Servicios from "../components/Servicios/ServiciosSection";
-
 import NuestraHuella from "../components/NuestraHuella/NuestraHuella";
-
 import SeccionDestinos from "../components/Destinos/SeccionDestinos";
-
 import SeccionMensaje from "../components/Servicios/SeccionMensaje";
-
 import SeccionRazonesColombia from "../components/Servicios/SeccionRazonesColombia";
-
 import SeccionEquipo from "../components/Equipo/SeccionEquipo";
-
 import FAQ from "./FAQ";
-
 import Footer from "../components/Footer/Footer";
-
 import BotonWhatsApp from "../components/BotonWhatsApp";
 
 export default function Home() {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const navigationLinks = [
   {
@@ -27,26 +28,23 @@ const legalLinks = [
   {
     label: "Preguntas Frecuentes",
     href: "#faq",
+    internal: false,
   },
   {
     label: "Política de Privacidad",
-    href: "/landing-page-mapapets/politica-privacidad",
+    href: "/politica-privacidad",
+    internal: true,
   },
   {
     label: "Términos y Condiciones",
     href: "/terminos-condiciones",
+    internal: true,
   },
 ];
 
 export default function FooterLinks() {
   return (
-    <div
-      className="
-        flex
-        flex-col
-        gap-10
-      "
-    >
+    <div className="flex flex-col gap-10">
       {/* NAVEGACIÓN */}
 
       <div>
@@ -80,7 +78,7 @@ export default function FooterLinks() {
         </ul>
       </div>
 
-      {/* LEGAL */}
+      {/* INFORMACIÓN */}
 
       <div>
         <h3
@@ -98,16 +96,29 @@ export default function FooterLinks() {
         <ul className="space-y-3">
           {legalLinks.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
-                className="
-                  text-white/80
-                  hover:text-white
-                  transition
-                "
-              >
-                {link.label}
-              </a>
+              {link.internal ? (
+                <Link
+                  to={link.href}
+                  className="
+                    text-white/80
+                    hover:text-white
+                    transition
+                  "
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  href={link.href}
+                  className="
+                    text-white/80
+                    hover:text-white
+                    transition
+                  "
+                >
+                  {link.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>

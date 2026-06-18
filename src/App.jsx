@@ -1,7 +1,7 @@
 // src/App.jsx
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -10,18 +10,18 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route
-          path="/landing-page-mapapets"
+          path="/"
           element={<Home />}
         />
         <Route
-  path="/landing-page-mapapets/politica-privacidad"
+  path="/politica-privacidad"
   element={<PoliticaPrivacidad />}
 />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
