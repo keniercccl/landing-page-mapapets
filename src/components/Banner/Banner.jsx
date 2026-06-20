@@ -270,7 +270,7 @@ const Banner = () => {
         </div>
 
         {/* Mascota */}
-
+{/* 
         <motion.img
           variants={fadeUp}
           src={PerroImg}
@@ -291,7 +291,7 @@ const Banner = () => {
             z-30
             pointer-events-none
           "
-        />
+        /> */}
       </motion.div>
     </section>
   );
