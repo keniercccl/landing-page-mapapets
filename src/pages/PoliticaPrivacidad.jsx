@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import LegalHeader from "../components/Legal/LegalHeader";
 import LegalSection from "../components/Legal/LegalSection";
+import SEO from "../components/SEO/SEO";
 
 import { privacyPolicyData } from "../data/legalData";
 
@@ -18,6 +19,11 @@ const PoliticaPrivacidad = () => {
 
   return (
     <main className="min-h-screen bg-white">
+      <SEO
+  title="Política de Privacidad | MAPAPETS"
+  description="Política de tratamiento de datos personales de MAPAPETS."
+  url="https://www.mapapets.com/politica-privacidad"
+/>
       {/* ==========================================
           NAVEGACIÓN
       ========================================== */}

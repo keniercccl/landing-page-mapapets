@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import LegalHeader from "../components/Legal/LegalHeader";
 import LegalSection from "../components/Legal/LegalSection";
+import SEO from "../components/SEO/SEO";
 
 import { termsAndConditionsData } from "../data/legalData";
 
@@ -16,6 +17,11 @@ const TerminosCondiciones = () => {
 
   return (
     <main className="min-h-screen bg-white">
+      <SEO
+  title="Términos y Condiciones | MAPAPETS"
+  description="Condiciones de uso de los servicios prestados por MAPAPETS."
+  url="https://www.mapapets.com/terminos-condiciones"
+/>
       {/* ==========================================
           HEADER
       ========================================== */}

@@ -12,9 +12,16 @@ import SeccionEquipo from "../components/Equipo/SeccionEquipo";
 import FAQ from "./FAQ";
 import Footer from "../components/Footer/Footer";
 import BotonWhatsApp from "../components/BotonWhatsApp";
+import SEO from "../components/SEO/SEO";
 
 export default function Home() {
   return (
+    <>
+    <SEO
+    title="MAPAPETS | Viaja con tu mascota sin complicaciones"
+    description="Asesoría internacional para viajar con mascotas. Documentación, requisitos sanitarios, aerolíneas y acompañamiento especializado."
+    url="https://www.mapapets.com"
+  />
     <div className="min-h-screen bg-white">
       {/* ==========================================
           HERO
@@ -109,5 +116,6 @@ export default function Home() {
 
       <div className="h-10 sm:h-12" />
     </div>
+    </>
   );
 }
