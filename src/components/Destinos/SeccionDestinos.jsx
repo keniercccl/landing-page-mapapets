@@ -71,11 +71,11 @@ const SeccionDestinos = () => {
         <div
           className="
             grid
-            grid-cols-1
-            sm:grid-cols-2
+            grid-cols-2
             lg:grid-cols-3
             xl:grid-cols-5
-            gap-6
+            gap-3
+            sm:gap-6
           "
         >
           {destinos.map((destino) => (
@@ -90,8 +90,10 @@ const SeccionDestinos = () => {
               }}
               className="
                 bg-white
-                rounded-3xl
-                p-6
+                rounded-2xl
+                sm:rounded-3xl
+                p-4
+                sm:p-6
                 shadow-lg
                 text-center
                 border
@@ -102,10 +104,13 @@ const SeccionDestinos = () => {
                 src={destino.flag}
                 alt={destino.country}
                 className="
-    w-16
-    h-12
+    w-12
+    h-9
+    sm:w-16
+    sm:h-12
     mx-auto
-    mb-4
+    mb-2
+    sm:mb-4
     object-contain
   "
               />
@@ -114,8 +119,10 @@ const SeccionDestinos = () => {
                 className="
                   font-bold
                   text-[#2B145A]
-                  text-lg
-                  mb-3
+                  text-base
+                  sm:text-lg
+                  mb-1
+                  sm:mb-3
                 "
               >
                 {destino.country}
@@ -123,7 +130,8 @@ const SeccionDestinos = () => {
 
               <p
                 className="
-                  text-sm
+                  text-xs
+                  sm:text-sm
                   text-gray-600
                   leading-relaxed
                 "
