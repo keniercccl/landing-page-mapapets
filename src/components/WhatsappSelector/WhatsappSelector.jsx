@@ -4,12 +4,15 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { whatsappAgents } from "./whatsappData";
+import { trackWhatsAppContact } from "../../analytics/analytics";
 
 const WhatsappSelector = ({
   isOpen,
   onClose,
 }) => {
-  const openWhatsapp = (phone) => {
+  const openWhatsapp = (phone, agentName) => {
+    trackWhatsAppContact(agentName);
+
     window.open(
       `https://wa.me/${phone}`,
       "_blank"
@@ -176,7 +179,7 @@ const WhatsappSelector = ({
                   <button
                     key={agent.id}
                     onClick={() =>
-                      openWhatsapp(agent.phone)
+                      openWhatsapp(agent.phone, agent.name)
                     }
                     className="
                       w-full
