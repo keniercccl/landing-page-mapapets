@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../../assets/logo_nuevo_1.png";
 import WhatsappSelector from "../WhatsappSelector/WhatsappSelector";
+import { handleAnchorClick } from "../../utility/scrollToId";
 
 const NAV_LINKS = [
   { id: 1, title: "Inicio", href: "#inicio" },
@@ -61,7 +62,7 @@ border-black/5
   "
 >
           {/* LOGO */}
-          <a href="#inicio" className="
+          <a href="#inicio" onClick={handleAnchorClick("inicio")} className="
 flex
 items-center
 gap-2
@@ -78,7 +79,7 @@ shrink-0
           <ul className="hidden md:flex items-center gap-2 lg:gap-3">
             {NAV_LINKS.map((l) => (
               <li key={l.id}>
-                <a href={l.href} className={`${chipBase} ${chipSizes} ${chipGreen}`}>
+                <a href={l.href} onClick={handleAnchorClick(l.href.slice(1))} className={`${chipBase} ${chipSizes} ${chipGreen}`}>
                   {l.title}
                 </a>
               </li>
@@ -181,7 +182,10 @@ shrink-0
                 <li key={l.id}>
                   <a
                     href={l.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => {
+                      handleAnchorClick(l.href.slice(1))(e);
+                      setOpen(false);
+                    }}
                     className={`${chipBase} ${chipSizes} ${chipGreen} w-full`}
                   >
                     {l.title}

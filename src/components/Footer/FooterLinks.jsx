@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { handleAnchorClick } from "../../utility/scrollToId";
 
 const navigationLinks = [
   {
@@ -12,7 +13,7 @@ const navigationLinks = [
   },
   {
     label: "Nuestra Huella",
-    href: "#huella",
+    href: "#nuestra-huella",
   },
   {
     label: "Equipo",
@@ -65,6 +66,7 @@ export default function FooterLinks() {
             <li key={link.label}>
               <a
                 href={link.href}
+                onClick={handleAnchorClick(link.href.slice(1))}
                 className="
                   text-white/80
                   hover:text-white
@@ -110,6 +112,7 @@ export default function FooterLinks() {
               ) : (
                 <a
                   href={link.href}
+                  onClick={handleAnchorClick(link.href.slice(1))}
                   className="
                     text-white/80
                     hover:text-white

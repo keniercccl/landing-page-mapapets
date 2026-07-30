@@ -7,6 +7,7 @@ import {
   slideUp,
   slideInFromSide,
 } from "../../utility/animation";
+import { handleAnchorClick } from "../../utility/scrollToId";
 
 const Hero = () => {
   return (
@@ -184,6 +185,7 @@ const Hero = () => {
 
               <a
                 href="#nuestra-huella"
+                onClick={handleAnchorClick("nuestra-huella")}
                 className="
                   inline-flex
                   items-center
