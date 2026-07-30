@@ -1,5 +1,7 @@
 import React from "react";
 
+import { trackWhatsAppContact } from "../../analytics/analytics";
+
 export default function FooterContact({
   whatsapp = "573203446611",
   phone1 = "+57 320 344 6611",
@@ -58,6 +60,8 @@ export default function FooterContact({
           href={`https://wa.me/${whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
+          data-whatsapp-cta="true"
+          onClick={() => trackWhatsAppContact("Footer contacto")}
           className="
             flex
             items-center
@@ -198,6 +202,8 @@ export default function FooterContact({
           href={`https://wa.me/${whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
+          data-whatsapp-cta="true"
+          onClick={() => trackWhatsAppContact("Footer CTA final")}
           className="
             inline-flex
             items-center

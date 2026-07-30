@@ -174,6 +174,7 @@ const PoliticaPrivacidad = () => {
             href="https://wa.me/573203446611"
             target="_blank"
             rel="noopener noreferrer"
+            data-whatsapp-cta="true"
             className="
               inline-flex
               items-center

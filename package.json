@@ -12,7 +12,6 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.11.3",
     "framer-motion": "^11.11.9",
     "react": "^18.3.1",
@@ -21,7 +20,6 @@
     "react-ga4": "^3.0.1",
     "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.17.0",
-    "react-scroll": "^1.9.3",
     "react-snowfall": "^2.4.0",
     "swiper": "^12.2.0",
     "yet-another-react-lightbox": "^3.32.0"

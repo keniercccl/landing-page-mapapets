@@ -14,6 +14,7 @@ const WhatsappButton = ({
       <button
         onClick={() => setIsOpen(true)}
         className={className}
+        data-whatsapp-cta="true"
       >
         {children}
       </button>
