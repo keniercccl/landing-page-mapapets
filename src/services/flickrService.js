@@ -9,9 +9,6 @@
 //  * https://www.flickr.com/services/api/
 //  ***********************************************************************/
 
-const API_KEY = import.meta.env.VITE_FLICKR_API_KEY;
-const ALBUM_ID = import.meta.env.VITE_FLICKR_ALBUM_ID;
-
 // /**
 //  * Construye la URL pública de Flickr.
 //  */

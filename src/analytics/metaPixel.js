@@ -35,7 +35,6 @@ export const initPixel = () => {
     return;
   }
 
-  /* eslint-disable */
   !(function (f, b, e, v, n, t, s) {
     if (f.fbq) return;
     n = f.fbq = function () {
@@ -59,7 +58,6 @@ export const initPixel = () => {
     "script",
     "https://connect.facebook.net/en_US/fbevents.js"
   );
-  /* eslint-enable */
 
   window.fbq("init", PIXEL_ID);
 
