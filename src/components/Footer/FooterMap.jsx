@@ -1,4 +1,3 @@
-import React from "react";
 
 export default function FooterMap({
   address = "Calle 115 #52-43, Bogotá, Colombia",

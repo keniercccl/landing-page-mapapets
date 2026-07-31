@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Logo from "../../assets/logo_nuevo_1.png";
 import WhatsappSelector from "../WhatsappSelector/WhatsappSelector";
 import { handleAnchorClick } from "../../utility/scrollToId";

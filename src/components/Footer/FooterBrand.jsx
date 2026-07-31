@@ -1,4 +1,3 @@
-import React from "react";
 
 import LogoMapapets from "../../assets/logo_nuevo_1.png";
 import LogoCodigoCafe from "../../assets/codigo-cafe-logo.png";

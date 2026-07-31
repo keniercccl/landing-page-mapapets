@@ -1,6 +1,6 @@
 // src/components/BotonWhatsApp.jsx
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import whatsappIcon from "../assets/WhatsApp.png";
 

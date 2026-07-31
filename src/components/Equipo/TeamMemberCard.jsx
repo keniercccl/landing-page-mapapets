@@ -1,6 +1,5 @@
 // src/components/Equipo/TeamMemberCard.jsx
 
-import React from "react";
 
 const TeamMemberCard = ({ member }) => {
   const {
@@ -145,7 +144,7 @@ const TeamMemberCard = ({ member }) => {
               text-[#4B5563]
             "
           >
-            "{quote}"
+            &ldquo;{quote}&rdquo;
           </p>
         </div>
 

@@ -1,4 +1,3 @@
-import React from "react";
 import ServicesCoverflow from "./ServicesCoverflow";
 
 const ServiciosSection = () => {

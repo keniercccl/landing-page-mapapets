@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -58,13 +58,6 @@ const PhotoCarousel = ({
       {isMobile ? (
         <Swiper
           direction="horizontal"
-          onSwiper={(swiper) => {
-            // console.log(
-            //   "SWIPER MOBILE",
-            //   swiper.width,
-            //   swiper.height
-            // );
-          }}
           slidesPerView={1}
           spaceBetween={20}
           navigation
@@ -157,7 +150,7 @@ const PhotoCarousel = ({
             watchSlidesProgress
             modules={[Thumbs]}
           >
-            {photos.map((photo, index) => (
+            {photos.map((photo) => (
               <SwiperSlide
   key={photo.id}
   className="!w-full"

@@ -1,7 +1,7 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 import EstatuaImg from "../../assets/estatua_libertad_1.jpg";
+// eslint-disable-next-line no-unused-vars -- se usa al reactivar la imagen del perro comentada más abajo
 import PerroImg from "../../assets/banner-perro.png";
 import LogoImg from "../../assets/logo_nuevo_1.png";
 

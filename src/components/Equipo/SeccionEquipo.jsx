@@ -1,6 +1,5 @@
 // src/components/Equipo/SeccionEquipo.jsx
 
-import React from "react";
 
 import TeamMemberCard from "./TeamMemberCard";
 import TeamCTA from "./TeamCTA";

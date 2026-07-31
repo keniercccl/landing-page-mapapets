@@ -1,6 +1,5 @@
 // src/components/WhatsappSelector/WhatsappSelector.jsx
 
-import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { whatsappAgents } from "./whatsappData";
