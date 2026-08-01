@@ -1,10 +1,10 @@
 // src/data/teamData.js
 
-import DianaImg from "../assets/equipo/diana.png";
+import DianaImg from "../assets/equipo/diana.webp";
 import KikiImg from "../assets/equipo/kiki.jpg";
 import LizImg from "../assets/equipo/liz.jpg";
 import PaolaImg from "../assets/equipo/paola.png";
-import MariaPazImg from "../assets/equipo/maria-paz2.png";
+import MariaPazImg from "../assets/equipo/maria-paz2.webp";
 import CaneloImg from "../assets/equipo/canelo.jpeg";
 
 const TEAM_MEMBERS = [

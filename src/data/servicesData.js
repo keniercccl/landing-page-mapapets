@@ -1,12 +1,12 @@
 // src/components/Servicios/data/servicesData.js
 
-import ViajesImg from "../assets/servicios/asesoria-internacional.png";
-import SanitariosImg from "../assets/servicios/tramite-sanitario.png";
-import VacunasImg from "../assets/servicios/vacunas-desparasitaciones.png";
-import RabiaImg from "../assets/servicios/prueba-serologia.png";
-import MicrochipImg from "../assets/servicios/microchip.png";
-import PetNannyImg from "../assets/servicios/pet-nanny_servicio.png";
-import AsesoriaImg from "../assets/servicios/asesoria-personalizada.png";
+import ViajesImg from "../assets/servicios/asesoria-internacional.webp";
+import SanitariosImg from "../assets/servicios/tramite-sanitario.webp";
+import VacunasImg from "../assets/servicios/vacunas-desparasitaciones.webp";
+import RabiaImg from "../assets/servicios/prueba-serologia.webp";
+import MicrochipImg from "../assets/servicios/microchip.webp";
+import PetNannyImg from "../assets/servicios/pet-nanny_servicio.webp";
+import AsesoriaImg from "../assets/servicios/asesoria-personalizada.webp";
 
 export const SERVICES = [
   {
