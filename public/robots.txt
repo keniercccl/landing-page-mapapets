@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://www.mapapets.com/sitemap.xml
+Sitemap: https://www.mapapets.co/sitemap.xml

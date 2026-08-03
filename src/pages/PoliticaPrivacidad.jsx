@@ -21,7 +21,7 @@ const PoliticaPrivacidad = () => {
       <SEO
   title="Política de Privacidad | MAPAPETS"
   description="Política de tratamiento de datos personales de MAPAPETS."
-  url="https://www.mapapets.com/politica-privacidad"
+  url="https://www.mapapets.co/politica-privacidad"
 />
       {/* ==========================================
           NAVEGACIÓN

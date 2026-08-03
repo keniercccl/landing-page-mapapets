@@ -19,7 +19,7 @@ const TerminosCondiciones = () => {
       <SEO
   title="Términos y Condiciones | MAPAPETS"
   description="Condiciones de uso de los servicios prestados por MAPAPETS."
-  url="https://www.mapapets.com/terminos-condiciones"
+  url="https://www.mapapets.co/terminos-condiciones"
 />
       {/* ==========================================
           HEADER

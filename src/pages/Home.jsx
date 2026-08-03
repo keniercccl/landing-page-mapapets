@@ -20,7 +20,7 @@ export default function Home() {
     <SEO
     title="MAPAPETS | Viaja con tu mascota sin complicaciones"
     description="Asesoría internacional para viajar con mascotas. Documentación, requisitos sanitarios, aerolíneas y acompañamiento especializado."
-    url="https://www.mapapets.com"
+    url="https://www.mapapets.co"
   />
     <div className="min-h-screen bg-white">
       {/* ==========================================
