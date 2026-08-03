@@ -4,7 +4,7 @@ import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import TerminosCondiciones from "./pages/TerminosCondiciones";
 import NotFound from "./pages/NotFound";
 import {
-  HashRouter,
+  BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <RouteTracker />
 
       <Routes>
@@ -45,7 +45,7 @@ function App() {
           element={<NotFound />}
         />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
