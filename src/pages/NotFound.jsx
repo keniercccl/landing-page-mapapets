@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 
+import SEO from "../components/SEO/SEO";
+
 const NotFound = () => {
   return (
+    <>
+    <SEO
+      title="Página no encontrada | MAPAPETS"
+      noindex
+    />
     <main
       className="
         min-h-screen
@@ -126,6 +133,7 @@ const NotFound = () => {
         </div>
       </div>
     </main>
+    </>
   );
 };
 
