@@ -1,6 +1,6 @@
 import { faqData } from "../data/faqData";
 
-import FAQCategory from "../components/FAQ/FAQCategory";
+import FAQCategory from "../components/Faq/FAQCategory";
 
 export default function FAQ() {
   return (
