@@ -58,8 +58,8 @@ export default function Footer() {
           >
             <FooterMap
               address="Calle 115 #52-43, Bogotá, Colombia"
-              mapEmbedSrc="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.841968423278!2d-74.079!3d4.613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNC42MTMsIC03NC4wNzk!5e0!3m2!1ses-419!2sco!4v1700000000000"
-              mapsUrl="https://maps.google.com/?q=Cl.115%20%2352-43%20Bogota"
+              mapEmbedSrc="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9457.544948492867!2d-74.06029494421301!3d4.698997851190149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9acef3da9823%3A0xceffbd3938c8a77!2sCl.%20115%20%2352-43%2C%20Suba%2C%20Bogot%C3%A1%2C%20Colombia!5e0!3m2!1ses-419!2scl!4v1786058063195!5m2!1ses-419!2scl"
+              mapsUrl="https://maps.app.goo.gl/EXVdTdd6rkLsyB8n6"
             />
           </div>
 

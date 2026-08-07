@@ -228,7 +228,12 @@ const Hero = () => {
             <div
               className="
                 w-full
-                max-w-xl
+                max-w-[260px]
+                sm:max-w-[300px]
+                md:max-w-[340px]
+                lg:max-w-[280px]
+                xl:max-w-sm
+                mx-auto
               "
             >
               <div
@@ -238,12 +243,13 @@ const Hero = () => {
                   border-[6px]
                   border-[#6D28D9]
                   shadow-2xl
+                  aspect-[9/16]
                 "
               >
                 <video
                   className="
                     w-full
-                    aspect-video
+                    h-full
                     object-cover
                   "
                   autoPlay
@@ -257,6 +263,7 @@ const Hero = () => {
                     src={HeroVideo}
                     type="video/mp4"
                   />
+                  Tu navegador no soporta la reproducción de video.
                 </video>
               </div>
 
