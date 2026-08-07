@@ -34,7 +34,7 @@ const setCanonical = (href) => {
 const SEO = ({
   title = "MAPAPETS | Transporte Internacional de Mascotas",
   description = "Asesoría especializada para viajar con tu mascota a cualquier país del mundo. Gestionamos requisitos sanitarios, documentación y acompañamiento internacional.",
-  image = "/logo_nuevo_1.png",
+  image = "/og-image.jpg",
   url = "https://www.mapapets.co",
   type = "website",
   noindex = false,
