@@ -18,8 +18,8 @@ investigación y las 12 observaciones verificadas:
 | — | Migración de hosting: GitHub Pages → Vercel, dominio `www.mapapets.co` | M | — | ✅ hecho |
 | — | Seguridad: 11/15 vulnerabilidades de `npm audit` resueltas (4 quedaron afuera a propósito, ver abajo) | S | — | ✅ hecho |
 | — | Video del Hero: formato vertical 9:16, comprimido (155.8MB → 10.2MB), `og-image.jpg`, foto de equipo actualizada | M | — | ✅ hecho |
-| 6 | **SEO — arreglos rápidos** (título/meta estáticos en `index.html`, fix del bug de texto del H1, datos estructurados JSON-LD `Organization`+`FAQPage`, `poster` del video del Hero, revisar H2 con keywords reales) | S-M | Bajo | ⏳ siguiente |
-| 7 | **SEO — pre-renderizado (SSG) de rutas públicas** — la causa raíz completa: hoy el HTML que recibe cualquier rastreador sin JS está prácticamente vacío | L | Medio-Alto — usar Preview Deployment antes de mergear a `main` (ver `docs/git-workflow.md`) | Pendiente |
+| 6 | **SEO — arreglos rápidos** (título/meta estáticos en `index.html`, fix del bug de texto del H1, JSON-LD `Organization`, `poster` del video del Hero, un H2 con keyword real) | S-M | Bajo | ✅ hecho — ver [`sprint-06-seo-base.md`](sprints/sprint-06-seo-base.md) |
+| 7 | **SEO — pre-renderizado (SSG) de rutas públicas** — la causa raíz completa: hoy el HTML que recibe cualquier rastreador sin JS está prácticamente vacío | L | Medio-Alto — usar Preview Deployment antes de mergear a `main` (ver `docs/git-workflow.md`) | ⏳ siguiente |
 | 8 | Code-splitting del bundle JS (`dynamic import()` en lightbox de fotos, selector de WhatsApp) — complementa el Sprint 7 en First Contentful Paint | S-M | Bajo | Pendiente |
 
 ## Backlog sin sprint asignado todavía
