@@ -1,4 +1,24 @@
-# Plan de trabajo — Landing MapaPets
+# Histórico — Sprints 0 a 5 (archivado)
+
+> **Este documento está archivado.** Los sprints 1 a 5 de acá abajo ya
+> están **hechos** (verificado contra el repo y contra producción). El
+> estado vivo del proyecto está en [`docs/ROADMAP.md`](../ROADMAP.md) —
+> empezá ahí, no acá. Este archivo queda solo como referencia histórica de
+> cómo arrancó el proyecto y qué se decidió en el camino.
+>
+> Resumen de lo que pasó después de este documento (no está reflejado
+> abajo, ver `docs/ROADMAP.md` y `docs/sprints/` para el detalle): se hizo
+> el Sprint 4 completo (imágenes a WebP, video comprimido con ffmpeg), el
+> Sprint 5 completo (SEO base, proxy serverless de Flickr, migración a
+> `BrowserRouter`), se resolvieron 11/15 vulnerabilidades de `npm audit`,
+> se migró el hosting de GitHub Pages a Vercel con dominio propio
+> (`www.mapapets.co`), y se corrigió un bug crítico de navegación
+> (`HashRouter` rompía a un 404 con los enlaces de ancla del menú) que no
+> está en ningún ítem de este plan porque se encontró después.
+
+---
+
+# Plan de trabajo — Landing MapaPets (original, sprints 0-5)
 **Para:** Claude Code
 **Origen:** auditoría técnica + feedback del trafficker digital, discutidos previamente con otro agente de Claude (Cowork).
 **Documento de referencia:** `Auditoria_Landing_MapaPets.md` (auditoría completa, con severidad y detalle de cada hallazgo). Este documento es el backlog accionable derivado de esa auditoría, organizado por sprints.
