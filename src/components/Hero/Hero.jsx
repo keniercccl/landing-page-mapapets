@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 import HeroVideo from "../../assets/videos/mapapets-hero.mp4";
+import HeroVideoPoster from "../../assets/videos/hero-poster.webp";
 
 import {
   slideUp,
@@ -90,8 +91,7 @@ const Hero = () => {
                 text-[clamp(2.5rem,5vw,5.5rem)]
               "
             >
-              Viaja con tu mascota
-
+              Viaja con tu mascota{" "}
               <span
                 className="
                   block
@@ -252,6 +252,7 @@ const Hero = () => {
                     h-full
                     object-cover
                   "
+                  poster={HeroVideoPoster}
                   autoPlay
                   muted
                   loop

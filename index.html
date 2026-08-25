@@ -2,12 +2,11 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta
-    name="keywords"
-    content="
+    <meta
+      name="keywords"
+      content="
       transporte de mascotas,
       viaje internacional mascotas,
       viajar con perros,
@@ -16,14 +15,59 @@
       requisitos ICA mascotas,
       exportación mascotas Colombia
     "
-  />
-    <title>Mapapets</title>
+    />
+
+    <!--
+      Título y descripción ESTÁTICOS: son el respaldo que ve cualquier
+      rastreador que no ejecuta JavaScript (la mayoría de las
+      herramientas de auditoría SEO, y la primera pasada de varios
+      buscadores). src/components/SEO/SEO.jsx los sobrescribe por ruta
+      para usuarios reales y para el renderizado con JS de Google — pero
+      sin este respaldo estático, un rastreador sin JS veía "Mapapets" a
+      secas y ninguna descripción. Ver docs/seo-auditoria-2026-08-15.md.
+    -->
+    <title>MAPAPETS | Transporte y Asesoría Internacional para Mascotas</title>
+    <meta
+      name="description"
+      content="Asesoría internacional para viajar con tu perro o gato: documentación, requisitos sanitarios, trámite ICA y acompañamiento en todo el proceso."
+    />
+
     <!--
       Google Analytics y Meta Pixel ya NO se cargan aquí:
       se inicializan desde src/analytics (analytics.js y metaPixel.js)
       para poder registrar correctamente cada cambio de ruta
       dentro de la SPA (ver src/analytics/RouteTracker.jsx).
     -->
+
+    <!--
+      Datos estructurados (schema.org). Solo Organization acá: es lo
+      único que es cierto en TODAS las rutas de esta SPA (todas comparten
+      este mismo index.html). FAQPage y otros schemas por página quedan
+      para cuando exista pre-renderizado por ruta (Sprint 7).
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MapaPets",
+        "url": "https://www.mapapets.co",
+        "logo": "https://www.mapapets.co/logo-mapapets.png",
+        "image": "https://www.mapapets.co/og-image.jpg",
+        "description": "Asesoría y gestión internacional para viajar con tu mascota: documentación, requisitos sanitarios, trámite ICA y acompañamiento especializado.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle 115 #52-43",
+          "addressLocality": "Bogotá",
+          "addressCountry": "CO"
+        },
+        "telephone": "+573203446611",
+        "sameAs": [
+          "https://www.facebook.com/Mapapets",
+          "https://www.instagram.com/mapa.pets/",
+          "https://www.tiktok.com/@mapa.pets"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

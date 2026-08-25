@@ -127,8 +127,8 @@ export default function SeccionRazonesColombia() {
             ¿Por qué elegir{" "}
             <span className="text-[#6B21A8]">
               Mapapets
-            </span>
-            ?
+            </span>{" "}
+            para el viaje internacional de tu mascota?
           </h2>
 
           {/* Social Proof */}
