@@ -50,6 +50,7 @@ export default function FAQAccordion({
             pb-5
             text-gray-600
             leading-relaxed
+            whitespace-pre-line
           "
         >
           {answer}
