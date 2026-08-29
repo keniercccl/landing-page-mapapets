@@ -2,7 +2,7 @@
 
 export const faqData = [
   {
-    category: "📄 Documentación y Requisitos",
+    category: "Documentación y Requisitos",
     questions: [
       {
         question:
@@ -35,7 +35,7 @@ export const faqData = [
   },
 
   {
-    category: "✈️ Viajes Nacionales e Internacionales",
+    category: "Viajes Nacionales e Internacionales",
     questions: [
       {
         question:
@@ -68,7 +68,7 @@ export const faqData = [
   },
 
   {
-    category: "🩺 Salud y Bienestar",
+    category: "Salud y Bienestar",
     questions: [
       {
         question:
@@ -101,7 +101,7 @@ export const faqData = [
   },
 
   {
-    category: "💜 Acerca de Mapapets",
+    category: "Acerca de Mapapets",
     questions: [
       {
         question:
